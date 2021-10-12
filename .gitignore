@@ -1,0 +1,6 @@
+*.pyc
+venv
+media
+wtc_error.log
+**/migrations/
+secret.py
