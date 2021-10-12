@@ -1,0 +1,350 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <!-- Site Title-->
+    <title>Chat</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link">
+    <link rel="stylesheet" href="/static/css/globalStyling.css">
+
+    <style>
+        a, a:focus, a:active {
+            color:blue;
+            hover: blue;
+        }
+
+        .container{max-width:1170px; margin:auto;}
+        img{ max-width:100%;}
+        .inbox_people {
+          background: #f8f8f8 none repeat scroll 0 0;
+          float: left;
+          overflow: hidden;
+          width: 40%; border-right:1px solid #c4c4c4;
+        }
+        .inbox_msg {
+          border: 1px solid #c4c4c4;
+          clear: both;
+          overflow: hidden;
+        }
+        .top_spac{ margin: 20px 0 0;}
+
+
+        .recent_heading {float: left; width:40%;}
+        .srch_bar {
+          display: inline-block;
+          text-align: right;
+          width: 60%; padding:
+        }
+        .headind_srch{ padding:10px 29px 10px 20px; overflow:hidden; border-bottom:1px solid #c4c4c4;}
+
+        .recent_heading h4 {
+          color: #05728f;
+          font-size: 21px;
+          margin: auto;
+        }
+        .srch_bar input{ border:1px solid #cdcdcd; border-width:0 0 1px 0; width:80%; padding:2px 0 4px 6px; background:none;}
+        .srch_bar .input-group-addon button {
+          background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+          border: medium none;
+          padding: 0;
+          color: #707070;
+          font-size: 18px;
+        }
+        .srch_bar .input-group-addon { margin: 0 0 0 -27px;}
+
+        .chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
+        .chat_ib h5 span{ font-size:15px; float:right;}
+        .chat_ib p{ font-size:14px; color:#989898; margin:auto}
+        .chat_img {
+          float: right;
+          width: 11%;
+        }
+        .chat_img_sent_from {
+          float: left;;
+          width: 11%;
+        }
+
+        .chat_ib_from {
+          float: right;
+          padding: 0 0 0 0px;
+          width: 20%;
+        }
+        .chat_ib {
+          float: left;
+          padding: 0 0 0 15px;
+          width: 20%;
+        }
+        .chat_msg {
+            float: center;
+            padding: 0 0 0 15px;
+            width: 60%;
+            text-align:center;
+        }
+
+        .chat_people{ overflow:hidden; clear:both;}
+        .chat_list {
+          border-bottom: 1px solid #c4c4c4;
+          margin: 0;
+          padding: 18px 16px 10px;
+          border-radius: 10px;
+          margin-bottom: 10px;
+          box-shadow: 0 0 5px #9b9b9b;
+        }
+        .inbox_chat { height: 550px; overflow-y: scroll;}
+
+        .active_chat{ background:#ebebeb;}
+
+        .incoming_msg_img {
+          display: inline-block;
+          width: 6%;
+        }
+        .received_msg {
+          display: inline-block;
+          padding: 0 0 0 10px;
+          vertical-align: top;
+          width: 92%;
+         }
+         .received_withd_msg p {
+          background: #ebebeb none repeat scroll 0 0;
+          border-radius: 3px;
+          color: #646464;
+          font-size: 14px;
+          margin: 0;
+          padding: 5px 10px 5px 12px;
+          width: 100%;
+        }
+        .time_date {
+          color: #747474;
+          display: block;
+          font-size: 12px;
+          margin: 8px 0 0;
+        }
+        .received_withd_msg { width: 57%;}
+        .mesgs {
+          float: left;
+          padding: 30px 15px 0 25px;
+          width: 60%;
+        }
+
+         .sent_msg p {
+          background: #05728f none repeat scroll 0 0;
+          border-radius: 3px;
+          font-size: 14px;
+          margin: 0; color:#fff;
+          padding: 5px 10px 5px 12px;
+          width:100%;
+        }
+        .outgoing_msg{ overflow:hidden; margin:26px 0 26px;}
+        .sent_msg {
+          float: right;
+          width: 46%;
+        }
+        .input_msg_write input {
+          background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+          border: medium none;
+          color: #4c4c4c;
+          font-size: 15px;
+          min-height: 48px;
+          width: 100%;
+        }
+
+        .type_msg {border-top: 1px solid #c4c4c4;position: relative;}
+        .msg_send_btn {
+          background: #05728f none repeat scroll 0 0;
+          border: medium none;
+          border-radius: 50%;
+          color: #fff;
+          cursor: pointer;
+          font-size: 17px;
+          height: 33px;
+          position: absolute;
+          right: 0;
+          top: 11px;
+          width: 33px;
+        }
+        .messaging { padding: 0 0 50px 0;}
+        .msg_history {
+          height: 516px;
+          overflow-y: auto;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+        .styled-table {
+            border-collapse: collapse;
+            background-color: white;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 200px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
+        }
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-body">
+        <div class="preloader-item"></div>
+    </div>
+</div>
+<!-- Page-->
+<div class="page">
+    <!-- Page Header-->
+    {% include 'header.html' %}
+
+    <section class="section section-variant-1 bg-gray-100">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <center>
+                        <h5>Available to chat</h5>
+                    </center>
+                    <div class="list-post-classic" id="chat-users" style="overflow:scroll;height:100vh;background-color:white;">
+
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+
+                    <center>
+                        <h5>
+                        Chat
+                        </h5>
+                    </center>
+                    <div class="box-body">
+                        <div class="card" style="height: 100vh; ">
+                            <div id="board"  style="height: 100vh;padding: 5px; overflow-y: scroll; background-color:#80808057;">
+                                {% block messages %}
+
+                                {% endblock %}
+                            </div>
+                            <div class="row" style="margin-bottom:4px;margin-left:2px;">
+                                <div class="col-md-10">
+                                    <div class="input-field">
+                                        <input id="id_message" class="form-control" width="100%" name="message" type="text" placeholder="Type your message..">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary" onclick="sendMessage()"><i class="material-icons" >send</i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <h5>Historical</h5>
+                      <table class="styled-table">
+                      <thead>
+                          <tr>
+                              <th style="width:35%">Date</th>
+                              <th style="width:65%">Your conversation history</th>
+                          </tr>
+                      </thead>
+                      <tbody id="chat-history">
+
+                      </tbody>
+                  </table>
+              </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Registered Successfully</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--        <button type="button" class="btn btn-primary">Send message</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Footer-->
+    {% include 'footer.html' %}
+</div>
+<!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
+<!-- Javascript-->
+<script src="/static/js/core.min.js"></script>
+<script src="/static/js/script.js"></script>
+<script src="/static/js/chat/chat.js"></script>
+<script src="/static/js/authentication/auth.js"></script>
+<script src="/static/js/permissions/permission.js"></script>
+<script src="/static/js/course/cart_count.js"></script>
+<script src="/static/js/exportCSV/export_booked_csv_data.js"></script>
+<script>
+    function sendMessage(){
+        var url = $(location).attr('href'),
+        parts = url.split("/"),
+        receiver_id = parts[parts.length-2];
+        sender_id = parts[parts.length-3];
+        var token = sessionStorage.getItem("UserDetails");
+        var access_token = JSON.parse(token);
+
+        $.ajax({
+            type: 'post',
+            url: '/api/messages/',
+            headers: { Authorization: 'Bearer ' + access_token.access },
+            data: {
+                'message': $('#id_message').val(),
+                'sender_id': sender_id,
+                'receiver_id': receiver_id,
+            },
+            success: function(data) {
+                html = `<div id=${data.id} class="chat_list" style="width:100%;float:right;background-color:#00ff7e33">
+                          <div class="chat_people">
+                            <div class="chat_img"> <img src="${data.sender.avatar}" alt="profile" style="border-radius: 50%;height:60px;width:60px;"> </div>
+                                <div class="chat_ib">
+                                  <h5><span class="chat_date">${data.timestamp}</span></h5>
+                                </div>
+                                <div class="chat_msg">
+                                  <h5>You</h5>
+                                  <span>${data.message}</span>
+                                </div>
+                            </div>
+                        </div>`
+                $('#board').append(html);
+                scrolltoend();
+                $('#id_message').val("");
+            },
+            error: function(data) {
+                console.log(data);
+               },
+       });
+    }
+
+</script>
+
+
+
+</body>
+</html>

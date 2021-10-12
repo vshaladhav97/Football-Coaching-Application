@@ -1,0 +1,2796 @@
+// BG COLOR :: SET
+.bg-gray-100 {
+    background-color: #ffffff;
+}
+.margin_left_0 reviews_setting {
+    padding-left: 0;
+}
+// ALL COURSES :: STYLE :: SET
+#course-list {
+    .card {
+        height: 100%;
+    }
+    .card-header {
+        background-color: #35ad79;
+        min-height: 108px;
+        position: relative;
+        display: flex;
+        span {
+            margin: auto;
+            color: #ffffff;
+            font-weight: 400;
+            line-height: 28px;
+            font-size: 20px;
+        }
+    }
+    .card-body {
+        background-color: #cbcbcb;
+        p {
+            font-size: 16px;
+            line-height: 23px;
+            white-space: break-spaces;
+            text-align: center;
+            color: #000000;
+            font-weight: 500;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -o-box;
+            display: -ms-box;
+            max-width: 100%;
+            -webkit-box-orient: vertical;
+            -o-box-orient: vertical;
+            -ms-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0 auto 15px;
+            -webkit-line-clamp: 6;
+            -moz-line-clamp: 6;
+            -o-line-clamp: 6;
+            -ms-line-clamp: 6;
+            height: 135px;
+            margin-bottom: 0;
+        }
+    }
+    .card-footer {
+        border: 0;
+        background-color: #cbcbcb;
+        padding-bottom: 20px;
+        padding-top: 0;
+        a {
+            border-radius: 30px;
+            padding: 7px 25px;
+            background-color: #ff443a;
+            border: 1px solid #ff443a;
+        }
+    }
+    .courses_list:nth-child(2) {
+        .card-header {
+            background-color: #dd4563;
+        }
+    }
+    .courses_list:nth-child(3) {
+        .card-header {
+            background-color: #3654a3;
+        }
+    }
+    .courses_list:nth-child(4) {
+        .card-header {
+            background-color: #f3e8b3;
+            span {
+                color: #000000;
+            }
+        }
+    }
+    .courses_list:nth-child(5) {
+        .card-header {
+            background-color: #c9dac1;
+            span {
+                color: #000000;
+            }
+        }
+    }
+}
+// ALL COURSES :: STYLE :: END
+// LISTINGS PAGE :: STYLING :: SET
+div.body {
+    display: flex;
+    margin-top: 25px;
+    a {
+        flex: 1 1;
+        margin: 0 !important;
+        padding: 20px !important;
+        height: auto !important;
+        width: auto !important;
+        display: block;
+        border-radius: 0 !important;
+        font-size: 14px;
+    }
+}
+// LISTINGS PAGE :: STYLING :: END
+// DATA TABLE :: RESPONSIVE :: SET
+.table-responsive {
+    margin-top: 0px !important;
+    .table-wrapper {
+        padding: 0;
+        padding-top: 25px;
+        border-radius: 0 0 15px 15px;
+        background: #f3f3f3;
+    }
+}
+.dataTables_wrapper {
+    .dataTables_filter {
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #3669a4;
+            input {
+                border: 3px solid #3669a4;
+                border-radius: 30px;
+                min-width: 260px;
+                padding: 7px 15px;
+                margin-bottom: 20px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+    thead {
+        tr {
+            th {
+                background-color: #d9d9d9;
+                font-size: 14px;
+                padding: 7px 6px !important;
+                border-bottom: 0 !important;
+                text-align: left !important;
+            }
+        }
+    }
+    tbody {
+        td {
+            padding: 11px 6px !important;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: left !important;
+            color: #000000 !important;
+            button {
+                padding: 0;
+                width: auto !important;
+                background-color: transparent;
+                border: 0;
+                font-weight: 500;
+                margin: 0 3px;
+            }
+        }
+    }
+}
+table.dataTable.no-footer {
+    border-bottom: 1px solid #d8d8d8 !important;
+}
+.dataTables_length,
+.dataTables_info,
+.dataTables_paginate.paging_simple_numbers {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.dataTables_length {
+    margin-left: 15px;
+}
+.table-responsive {
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        padding: 3px 10px;
+    }
+}
+table.dataTable {
+    width: 98% !important;
+}
+.add_course {
+    a {
+        display: inline-block;
+        background-color: #6d6d6d;
+        border: 0 !important;
+    }
+}
+.dataTables_wrapper .dataTables_filter {
+    margin-right: 10px;
+}
+// DATA TABLE :: RESPONSIVE :: END
+// Recent Activities :: Style :: Set
+#recent_activities {
+    table {
+        tr {
+            th {
+                background-color: #d9d9d9 !important;
+                color: #566787;
+                padding: 25px;
+                text-align: left !important;
+            }
+        }
+        #activities {
+            tr {
+                td {
+                    p {
+                        text-align: left;
+                        font-size: 19px;
+                        text-transform: capitalize;
+                    }
+                    img {
+                        border: 4px solid #2c2d31;
+                    }
+                }
+                td:first-child {
+                    width: 95px;
+                }
+                td:nth-child(n + 3) {
+                    width: 21%;
+                }
+            }
+        }
+    }
+}
+.notification-bar.margin_top15 {
+    margin-top: 25px;
+}
+.reviews_setting {
+    .t_heading {
+        background-color: #d9d9d9;
+        color: #566787;
+        padding: 25px;
+        text-align: left;
+        font-size: 18px;
+        padding: 15px 25px;
+    }
+    .card {
+        border-radius: 0;
+    }
+    .profile {
+        text-align: center;
+        li {
+            h5 {
+                font-size: 14px;
+            }
+            .star {
+                li {
+                    i {
+                        color: #f8c10c;
+                    }
+                }
+            }
+            strong {
+                font-size: 12px;
+            }
+            span {
+                font-size: 12px;
+            }
+            a {
+                color: #000000;
+                background-color: #f2f2f2;
+                padding: 1px 5px;
+                display: inline-block;
+                margin-top: 3px;
+                border-radius: 3px;
+                font-weight: 500;
+                text-transform: uppercase;
+                font-size: 12px;
+                i {
+                    color: #000000;
+                }
+            }
+        }
+        margin-bottom: 15px;
+    }
+    .user_profile {
+        .float-left {
+            strong {
+                color: #000000;
+                margin-right: 5px;
+            }
+        }
+        span {
+            i {
+                color: #f8c10c;
+            }
+        }
+        .date_rev {
+            span {
+                font-size: 12px;
+                text-align: right;
+            }
+        }
+    }
+    p {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+}
+// Recent Activities :: Style :: End
+// COURSES DETAILS PAGE :: STYLE :: SET
+.section {
+    #course_detail_html {
+        .post-corporate {
+            border: 0;
+            &:hover {
+                box-shadow: none;
+            }
+        }
+        .post-corporate-content {
+            padding: 0px;
+            .post-corporate-header {
+                text-align: center;
+                color: #ffffff;
+                margin: 0;
+                padding: 25px 20px;
+                font-size: 27px;
+                line-height: 34px;
+            }
+            .post-corporate-text {
+                margin-top: 0px;
+                background-color: #e4e4e4;
+                padding: 25px;
+                #course-detail {
+                    font-size: 18px;
+                    color: #000000;
+                    margin-bottom: 25px;
+                }
+            }
+            .select {
+                padding: 15px;
+                color: #ffffff;
+
+                border: 0;
+                font-size: 15px;
+            }
+            .select#venue {
+                background-color: #008037;
+            }
+            h4 {
+                text-transform: capitalize;
+                font-weight: 400;
+                margin-bottom: 25px;
+                color: #000000;
+            }
+            #course_type_logo {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .post-corporate#\31 {
+            .post-corporate-header {
+                background-color: #dd4563;
+            }
+            .post-corporate-content {
+                input#Entered_postcode {
+                    background-color: #dd4563;
+                    padding: 12px 15px;
+                    border: 1px solid #dd4563;
+                    color: #ffffff;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+                input#Entered_postcode::placeholder {
+                    color: #ffffff;
+                }
+
+                input#Entered_postcode:-ms-input-placeholder {
+                    color: #ffffff;
+                }
+
+                input#Entered_postcode::-ms-input-placeholder {
+                    color: #ffffff;
+                }
+            }
+        }
+        .post-corporate#\32 {
+            .post-corporate-header {
+                background-color: #3654a3;
+            }
+            .post-corporate-content {
+                input#Entered_postcode {
+                    background-color: #3654a3;
+                    padding: 12px 15px;
+                    border: 1px solid #3654a3;
+                    color: #ffffff;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+                input#Entered_postcode::placeholder {
+                    color: #ffffff;
+                }
+
+                input#Entered_postcode:-ms-input-placeholder {
+                    color: #ffffff;
+                }
+
+                input#Entered_postcode::-ms-input-placeholder {
+                    color: #ffffff;
+                }
+            }
+        }
+        .post-corporate#\33 {
+            .post-corporate-header {
+                background-color: #f3e8b3;
+            }
+            .post-corporate-content {
+                input#Entered_postcode {
+                    background-color: #f3e8b3;
+                    color: #000000;
+                    padding: 12px 15px;
+                    border: 1px solid #f3e8b3;
+                    color: #000000;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+                input#Entered_postcode::placeholder {
+                    color: #000000;
+                }
+
+                input#Entered_postcode:-ms-input-placeholder {
+                    color: #000000;
+                }
+
+                input#Entered_postcode::-ms-input-placeholder {
+                    color: #000000;
+                }
+            }
+        }
+        .post-corporate#\34 {
+            .post-corporate-header {
+                background-color: #c9dac1;
+            }
+            .post-corporate-content {
+                input#Entered_postcode {
+                    background-color: #c9dac1;
+                    color: #000000;
+                    padding: 12px 15px;
+                    border: 1px solid #c9dac1;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+                input#Entered_postcode::placeholder {
+                    color: #000000;
+                }
+
+                input#Entered_postcode:-ms-input-placeholder {
+                    color: #000000;
+                }
+
+                input#Entered_postcode::-ms-input-placeholder {
+                    color: #000000;
+                }
+            }
+        }
+    }
+    span.or {
+        font-size: 23px;
+        display: inline-block;
+        padding: 0 15px;
+        color: #8e8e8e;
+    }
+}
+.to_see_locations_by_postcode {
+    background-color: #ff443a;
+    color: #ffffff;
+    border: 0;
+    padding: 13px 25px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.course_edit_by_locations {
+    #first-div {
+        img {
+            max-height: 250px;
+            min-height: 250px;
+            height: 250px !important;
+        }
+    }
+    #third-div {
+        .time-content-1 {
+            height: 128px;
+        }
+        #third-div-first-child {
+            label {
+                strong {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+        #third-div-second-child {
+            overflow-y: auto;
+            height: 180px;
+            table {
+                tr {
+                    height: auto !important;
+                    td {
+                        width: auto !important;
+                        text-align: left !important;
+                        padding: 16px 15px;
+                        font-size: 16px;
+                        position: relative;
+                        select {
+                            position: absolute;
+                            right: 30px;
+                            background-color: transparent;
+                            border: 2px solid #000000;
+                            border-radius: 4px;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+        #time-scroll {
+            #third-div-third-child {
+                font-size: 18px;
+                text-align: left;
+                position: relative;
+                span {
+                    position: absolute;
+                    right: 60px;
+                }
+            }
+        }
+    }
+    #first-div-second-child {
+        background-color: #dd4563;
+        font-size: 0;
+        b {
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left !important;
+            display: block;
+            padding: 15.7px 15px;
+        }
+    }
+    .group-style-1 {
+        height: auto !important;
+        span {
+            margin-bottom: 6px !important;
+            label {
+                strong {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    #age-scroll {
+        #second-div-second-child {
+            overflow-y: auto;
+            height: 180px;
+            table {
+                tr {
+                    height: auto !important;
+                    background-color: #dd4563;
+                    td {
+                        width: auto !important;
+                        text-align: left !important;
+                        padding: 16px 15px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+.course_edit_by_locations.all_3evening_development {
+    #first-div-for-others {
+        img {
+            max-height: 250px;
+            min-height: 250px;
+            height: 250px !important;
+        }
+    }
+    #third-div-for-others-others {
+        position: relative;
+        background-color: #d9d9d9;
+        #time-scroll-others {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            .col-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0;
+                button {
+                    padding: 7px 25px;
+                    background-color: #ff443a;
+                    border: 1px solid #ff443a;
+                    width: 100%;
+                    font-size: 22px;
+                    color: #ffffff;
+                }
+            }
+        }
+        #third-div-second-child-others {
+            margin-top: 100px;
+            label {
+                font-size: 18px;
+                color: #000000;
+                padding-left: 8px;
+            }
+            select {
+                right: 30px;
+                background-color: transparent;
+                border: 2px solid #000000;
+                border-radius: 4px;
+                font-size: 18px;
+            }
+        }
+    }
+    #first-div-second-child-for-others {
+        font-size: 0;
+        background-color: #f3e8b3;
+        b {
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left !important;
+            display: block;
+            padding: 15.7px 15px;
+            color: #000000;
+        }
+    }
+    .group-style-1 {
+        height: auto !important;
+        span {
+            margin-bottom: 6px !important;
+            label {
+                strong {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    #second-div-for-others {
+        background-color: #f3e8b3;
+        .inside_ch {
+            p {
+                font-size: 16px;
+                padding: 9px 20px;
+                color: #000000;
+                border-bottom: 2px solid #ffffff;
+            }
+        }
+        .inside_ch:last-child {
+            p {
+                border-bottom: 0px solid #ffffff;
+            }
+        }
+    }
+}
+.course_edit_by_locations.all_3evening_development {
+    .\33 {
+        #third-div-for-others-others {
+            position: relative;
+            background-color: #d9d9d9;
+            #time-scroll-others {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                .col-3 {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding: 0;
+                    button {
+                        padding: 7px 25px;
+                        background-color: #ff443a;
+                        border: 1px solid #ff443a;
+                        width: 100%;
+                        font-size: 22px;
+                        color: #ffffff;
+                    }
+                }
+            }
+            #third-div-second-child-others {
+                margin-top: 100px;
+                label {
+                    font-size: 18px;
+                    color: #000000;
+                    padding-left: 8px;
+                }
+                select {
+                    border: 2px solid #000000;
+                }
+            }
+        }
+        #first-div-second-child-for-others {
+            font-size: 0;
+            background-color: #f3e8b3;
+            b {
+                color: #000000;
+            }
+        }
+        .group-style-1 {
+            height: auto !important;
+            span {
+                margin-bottom: 6px !important;
+                label {
+                    strong {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        #second-div-for-others {
+            background-color: #f3e8b3;
+            .inside_ch {
+                p {
+                    font-size: 16px;
+                    padding: 9px 20px;
+                    color: #000000;
+                    border-bottom: 2px solid #ffffff;
+                }
+            }
+            .inside_ch:last-child {
+                p {
+                    border-bottom: 0px solid #ffffff;
+                }
+            }
+        }
+    }
+}
+.course_edit_by_locations.all_3evening_development {
+    .\32 {
+        #third-div-for-others-others {
+            position: relative;
+            background-color: #d9d9d9;
+            #time-scroll-others {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                .col-3 {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding: 0;
+                    button {
+                        padding: 7px 25px;
+                        background-color: #ff443a;
+                        border: 1px solid #ff443a;
+                        width: 100%;
+                        font-size: 22px;
+                        color: #ffffff;
+                    }
+                }
+            }
+            #third-div-second-child-others {
+                margin-top: 100px;
+                label {
+                    font-size: 18px;
+                    color: #000000;
+                    padding-left: 8px;
+                }
+                select {
+                    border: 2px solid #000000;
+                }
+            }
+        }
+        #first-div-second-child-for-others {
+            font-size: 0;
+            background-color: #3654a3;
+            b {
+                color: #ffffff;
+            }
+        }
+        .group-style-1 {
+            height: auto !important;
+            span {
+                margin-bottom: 6px !important;
+                label {
+                    strong {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        #second-div-for-others {
+            background-color: #3654a3;
+            .inside_ch {
+                p {
+                    font-size: 16px;
+                    padding: 9px 20px;
+                    color: #ffffff;
+                    border-bottom: 2px solid #ffffff;
+                }
+            }
+            .inside_ch:last-child {
+                p {
+                    border-bottom: 0px solid #ffffff;
+                }
+            }
+        }
+    }
+}
+.course_edit_by_locations.all_3evening_development {
+    .\34 {
+        #third-div-for-others-others {
+            position: relative;
+            background-color: #d9d9d9;
+            #time-scroll-others {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                .col-3 {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding: 0;
+                    button {
+                        padding: 7px 25px;
+                        background-color: #ff443a;
+                        border: 1px solid #ff443a;
+                        width: 100%;
+                        font-size: 22px;
+                        color: #ffffff;
+                    }
+                }
+            }
+            #third-div-second-child-others {
+                margin-top: 100px;
+                label {
+                    font-size: 18px;
+                    color: #000000;
+                    padding-left: 8px;
+                }
+                select {
+                    border: 2px solid #000000;
+                }
+            }
+        }
+        #first-div-second-child-for-others {
+            font-size: 0;
+            background-color: #c9dac1;
+            b {
+                color: #000000;
+            }
+        }
+        .group-style-1 {
+            height: auto !important;
+            span {
+                margin-bottom: 6px !important;
+                label {
+                    strong {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        #second-div-for-others {
+            background-color: #c9dac1;
+            .inside_ch {
+                p {
+                    font-size: 16px;
+                    padding: 9px 20px;
+                    color: #000000;
+                    border-bottom: 2px solid #ffffff;
+                }
+            }
+            .inside_ch:last-child {
+                p {
+                    border-bottom: 0px solid #ffffff;
+                }
+            }
+        }
+    }
+}
+.course_edit_by_heading {
+    background-color: #362214;
+    color: #ffffff;
+    padding: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+// COURSES DETAILS PAGE :: STYLE :: END
+// CHECK OUT PROCESS :: STYLE :: SET
+.check_out_process {
+    h4 {
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+    }
+    #for_login {
+        text-align: center;
+        position: relative;
+        .or_center {
+            color: #000000;
+            position: absolute;
+            font-size: 28px;
+            font-weight: 500;
+            right: -20px;
+            text-transform: lowercase;
+            top: -1px;
+        }
+        button {
+            padding: 5px 155px;
+            font-size: 19px;
+            background-color: #f3e8b3;
+            border: 1px solid #f3e8b3;
+            color: #000000;
+            font-weight: 700;
+        }
+        .max_50 {
+            max-width: 360px;
+            margin: 0 auto;
+            text-align: left;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-size: 18px;
+            color: #000000;
+        }
+    }
+    #for_sign_up {
+        text-align: center;
+        button {
+            padding: 5px 155px;
+            font-size: 19px;
+            background-color: #474745;
+            border: 1px solid #474745;
+            color: #ffffff;
+            font-weight: 700;
+        }
+    }
+    form {
+        .form-group {
+            label {
+                text-align: right;
+                font-size: 18px;
+                color: #000000;
+                font-weight: 700;
+                padding-right: 0;
+                min-width: 130px;
+                padding-right: 5px;
+            }
+            input {
+                background-color: #d5d5d5 !important;
+                padding: 10px 15px;
+                border: 1px solid #d5d5d5;
+                font-size: 18px;
+                font-weight: 400;
+                border-radius: 0;
+                color: #000000;
+            }
+            input::-webkit-input-placeholder {
+                background-color: #d5d5d5 !important;
+                font-size: 18px;
+                color: #000000;
+            }
+            input:-ms-input-placeholder {
+                background-color: #d5d5d5 !important;
+                font-size: 18px;
+                color: #000000;
+            }
+            input::placeholder {
+                background-color: #d5d5d5 !important;
+                font-size: 18px;
+                color: #000000;
+            }
+            .col-sm-8 {
+                padding-left: 0;
+            }
+        }
+    }
+}
+// CHECK OUT PROCESS :: STYLE :: END
+.available_all_holiday_clubs {
+    .modal-dialog {
+        max-width: 760px;
+        .modal-content {
+            background-color: #e4e4e4;
+            .modal-header {
+                background-color: #f3e8b3;
+                color: #000000;
+                text-align: center;
+                h4 {
+                    display: block;
+                    width: 100%;
+                    text-transform: capitalize;
+                    font-size: 25px;
+                    font-weight: 400;
+                }
+            }
+            .modal-body {
+                padding: 35px;
+                padding-bottom: 0;
+                h3 {
+                    display: block;
+                    width: 100%;
+                    text-transform: capitalize;
+                    font-size: 25px;
+                    font-weight: 400;
+                    text-align: center;
+                    margin-bottom: 45px;
+                }
+                .all_mile {
+                    margin-bottom: 25px;
+                    display: flex;
+                    justify-content: space-between;
+                    .fst_div {
+                        max-width: 360px;
+
+                        h5 {
+                            text-transform: capitalize;
+                            font-size: 20px;
+                            font-weight: 400;
+                            margin-bottom: 15px;
+                        }
+                        p span {
+                            display: block;
+                        }
+                    }
+                    .mile_div {
+                        h5 {
+                            text-transform: lowercase;
+                            font-size: 20px;
+                            font-weight: 400;
+                            margin-bottom: 15px;
+                        }
+                    }
+                    .select_venue {
+                        a {
+                            display: block;
+                            background-color: #ff443a;
+                            color: #ffffff;
+                            padding: 8px 15px;
+                        }
+                    }
+                }
+            }
+            .modal-footer {
+                button {
+                    background-color: red;
+                    color: #ffffff;
+                    padding: 5px 25px;
+                    border: 1px solid red;
+                }
+            }
+        }
+    }
+}
+.customer_registration_part1_for_booking {
+    .profile_data {
+        h2 {
+            font-size: 24px;
+            color: #000000;
+            text-align: left;
+            text-transform: capitalize;
+            margin-bottom: 25px;
+        }
+        .ss {
+            margin-bottom: 25px;
+            label {
+                min-width: 146px;
+                strong {
+                    font-size: 18px;
+                    flex: 1 1;
+                    sup {
+                        color: red;
+                    }
+                }
+            }
+            .form-control-plaintext {
+                width: auto;
+                flex: 1 1;
+                margin-left: 15px;
+                font-size: 20px;
+                font-weight: 500;
+                border-bottom: 2px solid #9f9f9f;
+                padding: 6px 0px;
+            }
+            textarea {
+                margin-left: 0 !important;
+                min-height: 150px !important;
+            }
+        }
+        .checkbox_section {
+            padding-left: 25px;
+            margin-bottom: 35px;
+            span {
+                font-size: 15px;
+                font-weight: 600;
+                display: block;
+                margin-left: 15px;
+                margin-top: 3px;
+                color: #000000;
+            }
+            .checkbox-custom {
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+}
+.global_heading {
+    text-align: center;
+    color: #000000;
+    text-transform: capitalize;
+    font-size: 28px;
+    display: inline-block;
+    border-bottom: 2px solid #000000;
+}
+// CHILD REGISTRATION FOR BOOKING :: STYLE :: SET
+.child_registration_for_bookings {
+    .card-header.child-header {
+        padding: 12px;
+        table {
+            tr {
+                td {
+                    margin-bottom: 5px;
+                    strong {
+                        font-size: 16px;
+                    }
+                    span {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .card-body {
+        padding: 12px;
+        background-color: #d9d9d9;
+        margin-bottom: 30px;
+        .child_count {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .form_lable {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+            label {
+                font-size: 15px;
+                margin-right: 5px;
+                color: #000000;
+            }
+            input {
+                flex: 1 auto;
+                width: auto !important;
+                padding: 4px;
+                font-size: 15px;
+            }
+        }
+        .form_lable.d-block {
+            input {
+                width: 100% !important;
+            }
+        }
+    }
+}
+.child_registration_for_bookings.child1 {
+    .card-header.child-header {
+        background-color: #dd4563;
+        table {
+            tr {
+                td {
+                    strong {
+                        color: #ffffff;
+                    }
+                    span {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+.child_registration_for_bookings.child2 {
+    .card-header.child-header {
+        background-color: #3654a3;
+        table {
+            tr {
+                td {
+                    strong {
+                        color: #ffffff;
+                    }
+                    span {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+.child_registration_for_bookings.child3 {
+    .card-header.child-header {
+        background-color: #f3e8b3;
+        table {
+            tr {
+                td {
+                    strong {
+                        color: #000000;
+                    }
+                    span {
+                        color: #000000;
+                    }
+                }
+            }
+        }
+    }
+}
+.child_registration_for_bookings.child4 {
+    .card-header.child-header {
+        background-color: #c9dac1;
+        table {
+            tr {
+                td {
+                    strong {
+                        color: #000000;
+                    }
+                    span {
+                        color: #000000;
+                    }
+                }
+            }
+        }
+    }
+}
+.child_registration_for_booking_parrent {
+    #child_infos_others {
+        margin-top: 0px !important;
+    }
+}
+// CHILD REGISTRATION FOR BOOKING :: STYLE :: END
+// WEEK BOOKING :: STYLE
+.week_booking {
+    text-align: center;
+    .heading {
+        text-align: center;
+        color: #000000;
+        text-transform: capitalize;
+        font-size: 32px;
+        display: inline-block;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+    .show_date {
+        text-align: center;
+        color: #000000;
+        text-transform: capitalize;
+        font-size: 28px;
+        margin-bottom: 4px;
+        font-weight: 400;
+    }
+    .sub_heading {
+        color: #9b9b9b;
+        text-transform: capitalize;
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 25px;
+    }
+    .table_responsive {
+        width: 980px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+        .first_tb {
+            display: table;
+            padding-left: 300px;
+            .child {
+                display: table-cell;
+                padding: 10px 25px;
+                color: #000000;
+                font-size: 19px;
+                margin-bottom: 5px;
+                font-weight: 600;
+                text-transform: capitalize;
+                width: 130px;
+                max-width: 130px;
+            }
+        }
+        .select_name_tb {
+            display: table;
+            padding-left: 300px;
+            .select_child {
+                display: table-cell;
+                margin-bottom: 10px;
+                width: 130px;
+                max-width: 130px;
+                span {
+                    padding: 10px 35px;
+                }
+                .select2-choice {
+                    padding: 6px 32px 6px 10px;
+                    border: 3px solid #8bb7f0;
+                    border-radius: 0;
+                    text-align: left;
+                    span.select2-chosen {
+                        color: #000000;
+                        font-size: 19px;
+                    }
+                    .select2-arrow {
+                        background-color: #8bb7f0;
+                        color: #ffffff;
+                        right: 5px;
+                    }
+                }
+            }
+        }
+        .select_name_tbs {
+            display: table;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .child_check {
+                display: table-cell;
+                padding: 10px;
+                padding-bottom: 2px;
+                border: 1px solid #ffffff;
+                min-width: 130px;
+                width: 130px;
+                .checkbox-custom {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+            .child_day {
+                color: #000000;
+                font-size: 19px;
+                align-items: center;
+                align-items: center;
+                padding-right: 15px;
+                text-align: right;
+                display: table-cell;
+                min-width: 298px;
+            }
+        }
+        .select_name_tbs.odd {
+            .child_check {
+                background-color: #d5d4d3;
+            }
+        }
+        .select_name_tbs.even {
+            .child_check {
+                background-color: #a6a6a6;
+            }
+        }
+        .select_name_tbs.number_pass {
+            .child_day {
+            }
+            .in_child {
+                .child_check {
+                    background-color: #f1e6b2;
+                    padding-bottom: 10px;
+                    span {
+                        color: #000000;
+                        font-size: 19px;
+                    }
+                }
+            }
+        }
+        .select_name_tbs.week_pass {
+            .child_day.cost {
+                font-weight: 700;
+            }
+            .in_child {
+                .child_check {
+                    background-color: #020101;
+                    padding-bottom: 10px;
+                    span {
+                        color: #ffffff;
+                        font-size: 19px;
+                    }
+                }
+                .child_check.total {
+                    background-color: #008037;
+                }
+                .child_check.saved {
+                    background-color: #ff1616;
+                }
+            }
+        }
+    }
+}
+.search_form {
+    display: inline-block;
+    button {
+        background-color: #ff1616;
+        padding: 12px 15px;
+        border: 1px solid #ff1616;
+        color: #ffffff;
+        font-size: 16px;
+    }
+}
+#course_detail_html {
+    .postcode_window {
+        margin-top: 15px;
+        .modal-header {
+            h4 {
+                text-align: center;
+                margin-bottom: 0;
+                display: block;
+                width: 100%;
+            }
+        }
+        .modal-body {
+            padding: 25px 65px;
+            background-color: #e4e4e4;
+            h3 {
+                text-transform: capitalize;
+                font-weight: 400;
+                margin-bottom: 32px;
+                color: #000000;
+                text-align: center;
+                font-size: 28px;
+            }
+            .all_mile {
+                .all_miles {
+                    margin-bottom: 25px;
+                    display: flex;
+                    justify-content: space-between;
+                    .fst_div {
+                        max-width: 360px;
+                        max-width: 360px;
+                        width: 100%;
+                        h5 {
+                            text-transform: capitalize;
+                            font-size: 20px;
+                            font-weight: 400;
+                            margin-bottom: 15px;
+                        }
+                        p span {
+                            display: block;
+                        }
+                    }
+                    .mile_div {
+                        h5 {
+                            text-transform: lowercase;
+                            font-size: 20px;
+                            font-weight: 400;
+                            margin-bottom: 15px;
+                        }
+                    }
+                    .select_venue {
+                        button {
+                            display: block;
+                            background-color: #ff443a;
+                            border: 1px solid #ff443a;
+                            color: #ffffff;
+                            padding: 8px 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#course_detail_html {
+    article#\31 {
+        .postcode_window {
+            .modal-header {
+                background-color: #dd4563;
+                h4 {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+#course_detail_html {
+    article#\32 {
+        .postcode_window {
+            .modal-header {
+                background-color: #3654a3;
+                h4 {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+#course_detail_html {
+    article#\33 {
+        .postcode_window {
+            .modal-header {
+                background-color: #f3e8b3;
+                h4 {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+#course_detail_html {
+    article#\34 {
+        .postcode_window {
+            .modal-header {
+                background-color: #c9dac1;
+                h4 {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+// LOGIN PAGE COLOR CHAGE
+#check_out_process.\31 {
+    .check_out_process #for_login button {
+        background-color: #dd4563 !important;
+        color: #ffffff;
+    }
+}
+#check_out_process.\32 {
+    .check_out_process #for_login button {
+        background-color: #3654a3 !important;
+        color: #ffffff;
+    }
+}
+#check_out_process.\33 {
+    .check_out_process #for_login button {
+        background-color: #f3e8b3 !important;
+    }
+}
+#check_out_process.\34 {
+    .check_out_process #for_login button {
+        background-color: #c9dac1 !important;
+    }
+}
+// Order Summary
+
+#summary_container {
+    table {
+        #children_count {
+            td {
+                font-size: 20px;
+                font-weight: 700;
+                border: 0;
+            }
+        }
+        #children_name {
+            td {
+                background-color: #f1e6b2;
+                color: #000000;
+                font-size: 20px;
+                font-weight: 700;
+                border: 4px solid #ffffff;
+            }
+        }
+        #children_fees {
+            td {
+                background-color: #000000;
+                color: #ffffff;
+                font-size: 20px;
+                font-weight: 700;
+                border: 4px solid #ffffff;
+            }
+            td.total {
+                background-color: #008037;
+            }
+        }
+        td,
+        thead {
+            text-align: center;
+            border: 0;
+        }
+    }
+}
+.order_summary_header {
+    h5 {
+        color: #474745;
+        border: 0;
+        font-size: 38px;
+        margin-bottom: 45px;
+    }
+    h4 {
+        color: #000000;
+        border: 0;
+        font-size: 32px;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+    }
+    h3 {
+        color: #000000;
+        font-size: 28px;
+        text-transform: capitalize;
+        margin-bottom: 45px;
+    }
+}
+.summary__containers_week1 {
+    table {
+        #children__name {
+            td {
+                background-color: #f1e6b2;
+                color: #000000;
+                font-size: 20px;
+                font-weight: 700;
+                border: 4px solid #ffffff;
+                text-align: center;
+            }
+        }
+        #children__fees {
+            td {
+                background-color: #000000;
+                color: #ffffff;
+                font-size: 20px;
+                font-weight: 700;
+                border: 4px solid #ffffff;
+                text-align: center;
+            }
+            td.total {
+                background-color: #008037;
+            }
+            td.saved {
+                background-color: #ff1616;
+            }
+        }
+    }
+    .you_qualify {
+        h4 {
+            text-align: left;
+            text-transform: capitalize;
+            font-size: 16px;
+            margin-bottom: 25px;
+            strong {
+                font-weight: 600;
+            }
+        }
+    }
+    .total_cost {
+        h4 {
+            font-size: 28px;
+            text-transform: capitalize;
+        }
+        button {
+            background-color: #008037;
+            color: #ffffff;
+            padding: 10px 25px;
+            border: 0;
+            margin-left: 5px;
+            font-size: 28px;
+            text-transform: capitalize;
+            margin-bottom: 25px;
+        }
+    }
+}
+.all_fun_button {
+    button {
+        padding: 10px 25px;
+        height: 100%;
+        margin-top: 0 !important;
+        text-transform: capitalize;
+        font-weight: 400;
+        font-size: 22px !important;
+    }
+}
+.week_booking_table_responsive {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+    td,
+    thead {
+        border: 2px solid #ffffff;
+        text-align: center;
+    }
+    .first__tb {
+        .child {
+            color: #000000;
+            font-size: 19px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+    }
+    .select_name__tb {
+        .select_child {
+            .select2-choice {
+                padding: 6px 32px 6px 10px;
+                border: 3px solid #8bb7f0;
+                border-radius: 0;
+                text-align: left;
+            }
+            .select2-arrow {
+                background-color: #8bb7f0;
+                color: #ffffff;
+                right: 5px;
+            }
+        }
+    }
+    .select_name_tbs {
+        .child_day {
+            padding-right: 15px;
+            text-align: right;
+            color: #000000;
+            font-size: 19px;
+        }
+
+        .checkbox-custom {
+            height: 30px;
+            width: 30px;
+        }
+    }
+    .select_name_tbs.odd {
+        .child_check {
+            background-color: #d5d4d3;
+        }
+    }
+    .select_name_tbs.even {
+        .child_check {
+            background-color: #a6a6a6;
+        }
+    }
+    .select_name_tbs.number_pass {
+        .child_check {
+            background-color: #f1e6b2;
+            padding-bottom: 10px;
+            span {
+                color: #000000;
+                font-size: 19px;
+            }
+        }
+    }
+    .select_name_tbs.week_pass {
+        .child_check {
+            background-color: #020101;
+            span {
+                color: #ffffff;
+                font-size: 19px;
+            }
+        }
+        .child_check.total {
+            background-color: #008037;
+        }
+        .child_check.saved {
+            background-color: #ff1616;
+        }
+    }
+}
+// SUCCESS MODAL
+
+.background {
+    padding-top: 90px;
+}
+.modalbox.success,
+.modalbox.error {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #fff;
+    padding: 25px 25px 15px;
+    text-align: center;
+}
+.modalbox.success.animate .icon,
+.modalbox.error.animate .icon {
+    -webkit-animation: fall-in 0.75s;
+    -moz-animation: fall-in 0.75s;
+    -o-animation: fall-in 0.75s;
+    animation: fall-in 0.75s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.modalbox.success h1,
+.modalbox.error h1 {
+    font-family: "Montserrat", sans-serif;
+}
+.modalbox.success p,
+.modalbox.error p {
+    font-family: "Open Sans", sans-serif;
+}
+.modalbox.success button,
+.modalbox.error button,
+.modalbox.success button:active,
+.modalbox.error button:active,
+.modalbox.success button:focus,
+.modalbox.error button:focus {
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    margin-top: 15px;
+    width: 80%;
+    background: transparent;
+    color: #4caf50;
+    border-color: #4caf50;
+    outline: none;
+}
+.modalbox.success button:hover,
+.modalbox.error button:hover,
+.modalbox.success button:active:hover,
+.modalbox.error button:active:hover,
+.modalbox.success button:focus:hover,
+.modalbox.error button:focus:hover {
+    color: #fff;
+    background: #4caf50;
+    border-color: transparent;
+}
+.modalbox.success .icon,
+.modalbox.error .icon {
+    position: relative;
+    margin: 0 auto;
+    margin-top: -75px;
+    background: #4caf50;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.modalbox.success .icon span,
+.modalbox.error .icon span {
+    // position: absolute;
+    font-size: 4em;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+}
+.modalbox.error button,
+.modalbox.error button:active,
+.modalbox.error button:focus {
+    color: #f44336;
+    border-color: #f44336;
+}
+.modalbox.error button:hover,
+.modalbox.error button:active:hover,
+.modalbox.error button:focus:hover {
+    color: #fff;
+    background: #f44336;
+}
+.modalbox.error .icon {
+    background: #f44336;
+}
+.modalbox.error.cancel .icon {
+    background: #3654a3;
+}
+.modalbox.error.cancel button,
+.modalbox.error.cancel button:active,
+.modalbox.error.cancel button:focus {
+    color: #3654a3;
+    border-color: #3654a3;
+}
+.modalbox.error.cancel button:hover,
+.modalbox.error.cancel button:active:hover,
+.modalbox.error.cancel button:focus:hover {
+    color: #fff;
+    background: #3654a3;
+}
+.modalbox.error .icon span {
+    padding-top: 25px;
+}
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    /* stupid browser compat. smh */
+}
+.center .change {
+    clear: both;
+    display: block;
+    font-size: 10px;
+    color: #ccc;
+    margin-top: 10px;
+}
+@-webkit-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+@-moz-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+@-o-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+@-webkit-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 25%;
+    }
+}
+@-moz-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 25%;
+    }
+}
+@-o-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 25%;
+    }
+}
+@-moz-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+@-webkit-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+@-o-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+@keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+@-moz-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+@-webkit-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+@-o-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+@keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+.primary-field {
+    display: none;
+}
+.order_summary_modal_popup {
+    .modal-content {
+        .modal-header {
+        }
+    }
+}
+.price_matrix {
+    margin-top: 200px;
+    .pricing_guide {
+        color: #000000;
+        font-size: 19px;
+        margin-bottom: 5px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    table {
+        tr {
+            td:nth-child(1) {
+                background-color: #f1e6b2;
+                color: #000000;
+                font-size: 15px;
+                font-weight: 600;
+                border: 1px solid #f1e6b2;
+            }
+            td:nth-child(2) {
+                font-weight: 700;
+                text-align: center;
+            }
+        }
+    }
+}
+.preschool.order_summary {
+    table {
+        td,
+        thead {
+            border: 0px solid #dddddd;
+        }
+        #children_name {
+            td {
+                background-color: #dd4563;
+                color: #ffffff;
+                font-size: 20px;
+                font-weight: 700;
+                border: 4px solid #ffffff;
+                text-align: center;
+            }
+        }
+        #children_fees {
+            td {
+                background-color: #000000;
+                color: #ffffff;
+                font-size: 20px;
+                font-weight: 700;
+                border: 4px solid #ffffff;
+                text-align: center;
+            }
+            td.total {
+                background-color: #008037;
+            }
+            td.saved {
+                background-color: #ff1616;
+            }
+        }
+        #children_count {
+            td {
+                border: 0;
+                color: #000000;
+                font-size: 20px;
+                font-weight: 700;
+                text-align: center;
+            }
+        }
+    }
+}
+// COMFIRM ORDER :: MODAL
+.order_summary_modal_popup {
+    .modal-content {
+        .modal-header {
+            background-color: #362214;
+            h5 {
+                color: #ffffff;
+                text-transform: capitalize;
+                font-size: 28px;
+            }
+            .close {
+                span {
+                    color: #ffffff;
+                }
+            }
+        }
+        .modal-body {
+            background-color: #d9d9d9;
+            color: #000000;
+            p {
+                color: #000000;
+            }
+        }
+        .modal-footer {
+            .modal-footer {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            background-color: #d9d9d9;
+            display: flex;
+
+            button {
+                padding: 6px 15px;
+                margin: 0;
+                background-color: #ff443a;
+                color: #ffffff;
+                margin-left: 10px;
+            }
+            .modal-footer:last-child {
+                button {
+                    background-color: #008037;
+                }
+            }
+        }
+    }
+}
+#child_list_styling {
+    padding: 0;
+    .child-header-list {
+        background-color: #362214;
+        color: #ffffff;
+        text-transform: capitalize;
+        font-size: 18px;
+        padding: 15px;
+    }
+    #child_list {
+        .child_row {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #000000;
+        }
+    }
+}
+#child_form {
+    top: 0 !important;
+    margin-bottom: 25px;
+    .row.profile_data {
+        margin-top: 0;
+        margin: 0;
+        margin-top: 0;
+        margin: 0;
+        border: 1px solid #000000;
+    }
+    .form-group.row {
+        margin-bottom: 0;
+    }
+    .profile_data {
+        button {
+            background-color: #7d7d7d;
+            color: #ffffff;
+            padding: 10px 35px;
+            min-height: auto;
+        }
+        #edit {
+            padding: 0;
+        }
+    }
+}
+#analytics {
+    margin-top: 30px;
+    .venue_analytics_button {
+        button {
+            padding: 10px 25px;
+            font-size: 14px;
+            border: 1px solid #000000;
+        }
+    }
+    .total-fields {
+        background-color: #4388cc;
+    }
+    .max_700 {
+        max-width: 520px;
+        margin: 0 auto;
+        .tab-content {
+        }
+        .nav.nav-tabs {
+            max-width: 380px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            justify-content: space-between;
+            border: 0px solid #dee2e6;
+            li {
+                .nav-link.active {
+                    color: #000000;
+                    font-weight: 700;
+                }
+                .nav-link {
+                    border: 0px solid #dee2e6;
+                }
+            }
+        }
+        .tab-content {
+            table {
+                width: 100%;
+                margin: 15px 0;
+                tr {
+                    td {
+                        background-color: #4388cc;
+                        color: #000000;
+                        text-align: center;
+                        border: 2px solid #ffff;
+                        padding: 10px;
+                        font-size: 15px;
+                    }
+                }
+            }
+            .select2-container {
+                border: 2px solid #e8e8e8;
+                padding: 7px 13px;
+                width: 250px !important;
+            }
+            .select2-arrow {
+                right: 0px;
+            }
+        }
+    }
+}
+
+// Responsive :: Tablet and Mobile View
+@media (max-width: 800px) {
+    .check_out_process #for_login button {
+        padding: 5px 15px;
+        width: 100%;
+    }
+    .check_out_process #for_sign_up button {
+        padding: 5px 15px;
+        width: 100%;
+    }
+    .check_out_process #for_login .or_center {
+        display: none;
+    }
+    .check_out_process form .form-group .col-sm-8 {
+        padding-left: 0;
+        flex: 100%;
+        max-width: 100%;
+    }
+    .check_out_process #for_login .max_50 {
+        max-width: 100%;
+    }
+    .check_out_process form .form-group label {
+        text-align: left;
+    }
+    .check_out_process form {
+        padding-left: 15px;
+    }
+    .check_out_process h4 {
+        margin-bottom: 0px;
+    }
+    .week_booking.overflow_x_scroll {
+        overflow-x: scroll;
+    }
+}
+@media (max-width: 767px) {
+    .section #course_detail_html .post-corporate-content .select {
+        width: 100%;
+    }
+    .section span.or {
+        display: block;
+        text-align: center;
+    }
+    .to_see_locations_by_postcode {
+        padding: 13px 15px;
+        margin-left: 0;
+    }
+    #course_detail_html .postcode_window .modal-body {
+        padding: 20px 15px;
+    }
+    #course_detail_html .postcode_window .modal-body .all_mile .all_miles {
+        display: block;
+    }
+    .customer_registration_part1_for_booking .profile_data .ss label strong {
+        font-size: 16px;
+    }
+    .customer_registration_part1_for_booking .profile_data .checkbox_section span {
+        font-size: 12px;
+        margin-top: -1px;
+    }
+    .customer_registration_part1_for_booking .profile_data .ss {
+        margin-bottom: 10px;
+        display: block !important;
+    }
+    .customer_registration_part1_for_booking .profile_data .ss .form-control-plaintext {
+        width: 100%;
+        margin-left: 0;
+    }
+    .background {
+        padding: 0 15px;
+        padding-top: 90px;
+    }
+    .rd-navbar-fixed .rd-nav-link {
+        padding: 0;
+    }
+    .order_summary_header h5 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    .order_summary_header h4 {
+        font-size: 26px;
+    }
+    .order_summary_header h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    .summary__containers_week1 table #children__name td,
+    .summary__containers_week1 table #children__fees td {
+        font-size: 12px;
+    }
+    .summary__containers_week1 .total_cost h4 {
+        font-size: 22px;
+    }
+    .summary__containers_week1 .total_cost button {
+        font-size: 18px;
+    }
+    .all_fun_button button {
+        font-size: 17px !important;
+    }
+    .summary__containers_week1 table {
+        max-width: 510px;
+        width: 510px;
+    }
+    .summary__containers_week1 > div {
+        overflow-x: scroll;
+    }
+    .all_fun_button .justify-content-end {
+        justify-content: space-between !important;
+        margin-top: 18px;
+    }
+    .rd-navbar-fixed .rd-nav-link {
+        padding: 0 !important;
+    }
+    .rd-navbar-fixed .list-inline-bordered {
+        align-items: center;
+    }
+    .list-inline-bordered > li:first-child {
+        span {
+            display: none;
+        }
+    }
+    .preschool.order_summary table {
+        max-width: 510px;
+        width: 510px;
+    }
+    .preschool.order_summary > .table_scroll {
+        overflow-x: scroll;
+    }
+    .preschool.order_summary table #children_count td,
+    .preschool.order_summary table #children_name td {
+        font-size: 12px;
+    }
+    .week_booking .heading {
+        font-size: 22px;
+    }
+    .week_booking .show_date {
+        font-size: 18px;
+    }
+    .week_booking .table_responsive .first_tb .child,
+    .week_booking .table_responsive .select_name_tb .select_child span,
+    .week_booking .table_responsive .select_name_tbs .child_day {
+        font-size: 13px;
+    }
+    .week_booking .table_responsive .select_name_tbs.number_pass .in_child .child_check span,
+    .week_booking .table_responsive .select_name_tbs.week_pass .in_child .child_check span {
+        font-size: 14px;
+    }
+    .week_booking .table_responsive .first_tb,
+    .week_booking .table_responsive .select_name_tb {
+        padding-left: 160px;
+    }
+    .week_booking .table_responsive .select_name_tbs .child_day {
+        min-width: 158px;
+    }
+    .price_matrix {
+        margin-top: 20px;
+    }
+    #recent_activities table #activities tr td img {
+        border: 2px solid #2c2d31;
+        height: 30px !important;
+        width: 30px !important;
+    }
+    #recent_activities table #activities tr td:first-child {
+        width: 65px;
+    }
+    #recent_activities table #activities tr td p {
+        font-size: 12px;
+    }
+    #recent_activities table #activities tr td:nth-child(n + 3) {
+        font-size: 12px;
+    }
+    #recent_activities {
+        margin-top: 30px !important;
+        margin-bottom: 25px;
+    }
+    #recent_activities table tr th {
+        padding: 18px;
+        font-size: 14px !important;
+    }
+    .note_red_text {
+        font-size: 12px;
+    }
+    .note_red__icon {
+        min-width: 50px;
+    }
+    .rd-navbar-fixed .rd-navbar-main.active {
+        .rd-nav-link {
+            padding: 9px 56px 9px 18px !important;
+        }
+    }
+    .rd-navbar--has-dropdown.rd-navbar-submenu {
+        .open_mobile {
+            position: fixed;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: #2c2d31;
+            z-index: 5;
+            display: block;
+            overflow: visible;
+            top: 55px;
+            height: auto;
+            opacity: 1;
+            text-align: left;
+            border: 0;
+            li {
+                a {
+                    color: #b7b7b7;
+                    span {
+                        color: #b7b7b7;
+                        display: block;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate,
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter {
+        display: inline-block !important;
+    }
+}
+// 
+.course_edit_by_locations #age-scroll #second-div-second-child .Evening.Development table tr ,
+.course_edit_by_locations #first-div-second-child .Evening.Development, 
+.Evening.Development .card-header.child-header{
+    background-color: #3654a3;
+}
+#for_preschools_child {
+        .card-header  {
+            padding: 15px;
+            td {
+                strong {
+                    font-size: 14px;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+        .card-body {
+            padding: 15px;
+            .body_content {
+                .child_count {
+                    font-size: 16px;
+                }
+                .checkbox_ {
+                    align-items: center;
+                    display: flex;
+                    span {
+                        font-size: 16px;
+                    }
+                    input {
+                        height: 18px;
+                        width: 18px;
+                        margin-left: 8px;
+                    }
+                }
+                .child_count {
+                    font-size: 20px;
+                }
+            }
+            .form_lable {
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                justify-content: space-between;
+                label {
+                    font-size: 14px;
+                    min-width: 83px;
+                    color: #000000;
+                }
+                input {
+                    width: 100%;
+                    font-size: 13px;
+                    text-transform: capitalize;
+                    padding: 2px 8px;
+                    border: 1px solid #ffffff;
+                }
+            }
+            .form_lable.d-block {
+                input {
+                    width: 100%;
+                }
+            }
+        }
+}
+.preschool.order_summary table #children_name td.Evening.Development {
+    background-color: #3654a3;
+}
+#postcode {
+    text-transform: uppercase;
+}
+.profile_data.locations_ {
+    label {
+        strong {
+            color: #000000; 
+        }
+    }
+}
+.error {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+}
+#venue-section {
+    label {
+        color: #000000; 
+    }
+}
+.add_venue_btn {
+    background-color: #39399e !important;
+    border: 1px solid #39399e !important;
+}
+#location_submit {
+    background-color: #35ad79 !important;
+    border: 1px solid #35ad79 !important;
+}
+#post_code {
+    text-transform: uppercase;
+}
+.profile_set_input {
+    .pd__ {
+        padding: 35px 25px;
+        box-shadow: 0px 0px 4px -1px #968686;
+        border-radius: 4px;
+        margin-bottom: 25px;
+        .form-group.row {
+            margin: 0 !important;
+            margin-bottom: 15px !important;
+        }
+        input,textarea {
+            border: 1px solid #e0e0e0;
+            padding: 7px 10px;
+            border-radius: 4px;
+        }
+    }
+}
+#profile-container img {
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.save_password {
+    background-color: #35ad79 !important;
+    border: 1px solid #35ad79 !important;
+}
+.locations_add_remove {
+    .pad_30 {
+        padding: 35px 35px;
+        box-shadow: 0px 0px 4px -1px #968686;
+        border-radius: 4px;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        position: relative;
+        .fa-trash {
+            position: absolute;
+            font-size: 18px;
+            background-color: black;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            color: #ffffff;
+            border-radius: 4px;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+.management_courses_add {
+    .no_pad {
+        padding: 0;
+        .stepper  {
+            max-width: 100%;   
+            width: 100%;        
+            input {
+                text-align: left;
+                padding: 5px 10px;
+                font-weight: 400;
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+}
+.next__button {
+    margin-bottom: 10px;
+    button {
+        border-radius: 30px;
+        padding: 7px 25px;
+        background-color: #ff443a;
+        border: 1px solid #ff443a;
+    }
+}
+.per_day_price.align_style {
+    .form-group {
+        label {
+            min-width: 128px;
+        }
+    }
+} 
+.edit_profile_set {
+    border-radius: 4px;
+    padding: 2px 25px;
+    background-color: #ff443a;
+    border: 1px solid #ff443a;
+    min-width: 183px;
+    display: inline-block;
+    font-size: 16px;
+    color: #ffffff;
+    span {
+        color: #ffffff !important;
+    }
+}
+.rd-navbar-static .rd-nav-item {
+    a.active {
+        color: #35ad79 !important;
+    }
+}
+#for_preschools_child {
+    .Evening.Development {
+        margin-bottom: 25px;
+    }
+}
+g.p0_labels-inner,.p1_labels-inner{
+    display: none;
+}
+.dvstr-graph {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    .dvstr-graph__body {
+        margin: 0px;  
+    }
+    .dvstr-graph__item {
+        padding: 4px 0;
+    }
+}
+.dvstr-graph__label {
+    width: 20%;
+    padding-left: 0;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 1.2;
+    font-size: 10px;
+    color: #000000;
+}
+.dvstr-graph__line,.dvstr-graph__group {
+    min-height: 40px;
+    width: 80%;
+    border-radius: 0 5px 5px 0;
+    span {
+        display: none;
+    }
+}
+.graph__block {
+    margin-top: 170px; 
+}

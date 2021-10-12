@@ -1,0 +1,539 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+<head>
+    <!-- Site Title-->
+    <title>Dashboard</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-signin-client_id"
+        content="912979131888-dbcvct33u7aja0i4odm79qf7o5u7i2ru.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+        href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/alert.css">
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link">
+    <link rel="stylesheet" href="/static/js/d3pie/jquery.dvstr_jqp_graph.min.css">
+    <link rel="stylesheet" href="/static/css/globalStyling.css">
+    <link rel="stylesheet" href="/static/js/fullcalendar/main.css">
+    <style>
+        .alert.alert-info {
+            background-color: white;
+            color: #577696;
+            box-shadow: 0 0 5px #9b9b9b;
+        }
+
+        .alert.alert-danger {
+            background-color: white;
+            color: #DF4848;
+            box-shadow: 0 0 5px #9b9b9b;
+        }
+
+        #recent_activities {
+            margin-top: 30px !important;
+        }
+
+        .rd-navbar-static .rd-nav-item+.rd-nav-item .rd-navbar-submenu-toggle:nth-child(2),
+        .rd-navbar-static .rd-nav-item+.rd-nav-item .rd-navbar-submenu-toggle:nth-child(3) {
+            display: none;
+        }
+    </style>
+    <!--    <link rel="stylesheet"-->
+    <!--          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css"/>-->
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader-body">
+            <div class="preloader-item"></div>
+        </div>
+    </div>
+    <!-- Page-->
+    <div class="page">
+        <!-- Page Header-->
+        {% include 'header.html' %}
+        <section class="section section-variant-1 bg-gray-100">
+
+            <!--        <div class="container">-->
+            <!--            <div class="row row-50 justify-content-center">-->
+            <!--                <div class="col-md-10 col-lg-8 col-xl-6">-->
+            <!--                    <div class="card-login-register" id="card-l-r">-->
+            <div class="container-fluid">
+
+                <div class="row" id="blue-notification-row">
+                    <div class="col-md-12">
+                        <div class="flag note">
+                            <div class="flag__image note__icon">
+                                <i class="fa fa-info-circle"></i>
+                            </div>
+                            <div class="flag__body note__text" id="blue-notification">
+                            </div>
+                            <a href="#" class="note__close">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-md-10">
+                        <center style="color:black;">OVERVIEW</center>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-10">
+                            <!-- jQuery pie chart :: set -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div id="piechart_dashbord"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="graph__block" id="graph_05"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div id="radio_dashbord"></div>
+                                </div>
+                            </div>
+
+                            <!-- jQuery pie chart :: End -->
+
+
+
+
+                            <!-- <div class="row" id="charts">
+
+                                <div class="col-md-4">
+                                    <div id="piechart"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div id="barchart"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div id="donutchart"></div>
+                                </div>
+                            </div> -->
+                            <div class="row" id="recent_activities">
+                                <div class="col-md-12">
+                                    <div class="table-custom-responsive">
+                                        <table class="table-custom table-standings table-classic">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align:center;font-size:18px;background:#94a3b3b5;"
+                                                        colspan="3">Recent Activities</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="activities">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- Noti -->
+                                    <div class="notification-bar margin_top15">
+                                        <div class="flag note">
+                                            <div class="flag__image note_red__icon">
+                                                <i class="fa fa-info-circle"></i>
+                                            </div>
+                                            <div class="flag__body note_red_text">
+                                                Due to circumstances beyond our control,
+                                                these dates may be subject to change. We will always notify you of any
+                                                changes.
+                                            </div>
+                                            <a href="#" class="note__close" onclick="close_notification()">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 margin_left_0 reviews_setting">
+                            <h4 class="t_heading">Rating Alerts</h4>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="profile">
+                                                <li>
+                                                    <h5>Excellent</h5>
+                                                </li>
+                                                <li>
+                                                    <ul class="d-flex justify-content-center star">
+                                                        <li><i class="text-warning fa fa-star"></i></li>
+                                                        <li><i class="text-warning fa fa-star"></i></li>
+                                                        <li><i class="text-warning fa fa-star"></i></li>
+                                                        <li><i class="text-warning fa fa-star"></i></li>
+                                                        <li><i class="text-warning fa fa-star"></i></li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>4,87</strong> <span>Average</span> <strong>1325</strong>
+                                                    <span>Reviews</span>
+                                                </li>
+                                                <li><a href="#"><i class="text-warning fa fa-star"></i> Reviews</a></li>
+                                            </ul>
+                                            <div class="user_profile d-flex justify-content-between">
+                                                <div>
+                                                    <a class="float-left"
+                                                        href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                                    </a>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                </div>
+                                                <div class="date_rev">
+                                                    <span>27th of jan 2021 9:51AM</span>
+                                                </div>
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                                electronic typesetting, remaining essentially unchanged. It was
+                                                popularised in the 1960s with the release of Letraset sheets containing
+                                                Lorem Ipsum passages, and more recently with desktop publishing software
+                                                like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            <!-- <p>
+                                                <a class="float-right btn btn-outline-primary ml-2"> <i
+                                                        class="fa fa-reply"></i> Reply</a>
+                                                <a class="float-right btn text-white btn-danger"> <i
+                                                        class="fa fa-heart"></i> Like</a>
+                                            </p> -->
+                                            <div class="user_profile d-flex justify-content-between">
+                                                <div>
+                                                    <a class="float-left"
+                                                        href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                                    </a>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                </div>
+                                                <div class="date_rev">
+                                                    <span>27th of jan 2021 9:51AM</span>
+                                                </div>
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                                electronic typesetting, remaining essentially unchanged. It was
+                                                popularised in the 1960s with the release of Letraset sheets containing
+                                                Lorem Ipsum passages, and more recently with desktop publishing software
+                                                like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            <div class="user_profile d-flex justify-content-between">
+                                                <div>
+                                                    <a class="float-left"
+                                                        href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                                    </a>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                </div>
+                                                <div class="date_rev">
+                                                    <span>27th of jan 2021 9:51AM</span>
+                                                </div>
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                                electronic typesetting, remaining essentially unchanged. It was
+                                                popularised in the 1960s with the release of Letraset sheets containing
+                                                Lorem Ipsum passages, and more recently with desktop publishing software
+                                                like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            <div class="user_profile d-flex justify-content-between">
+                                                <div>
+                                                    <a class="float-left"
+                                                        href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                                    </a>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                    <span class="float-left"><i
+                                                            class="text-warning fa fa-star"></i></span>
+                                                </div>
+                                                <div class="date_rev">
+                                                    <span>27th of jan 2021 9:51AM</span>
+                                                </div>
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                                electronic typesetting, remaining essentially unchanged. It was
+                                                popularised in the 1960s with the release of Letraset sheets containing
+                                                Lorem Ipsum passages, and more recently with desktop publishing software
+                                                like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--        </div>-->
+        </section>
+
+        <!-- Page Footer-->
+        {% include 'footer1.html' %}
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script src="/static/js/d3pie/d3.min.js"></script>
+    <script src="/static/js/d3pie/d3pie.js"></script>
+    <script src="/static/js/d3pie/jquery.dvstr_jqp_graph.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            var color_blue = '#ff9d60';
+            var color_green = '#e46763';
+            var color_red = '#b93b61';
+
+            $('#graph_05').dvstr_graph({
+                // title: 'Unigine Superposition 1.0',
+                // description: 'High 1920 x 1080 (Radeon RX 470 4GB)',
+                // unit: 'FPS',
+                // better: 'Higher is better',
+                grid_wmax: 200,
+                // point: [
+                //     {
+                //         title: 'Min',
+                //         color: color_blue
+                //     },
+                //     {
+                //         title: 'Avg',
+                //         color: color_green
+                //     },
+                //     {
+                //         title: 'Max',
+                //         color: color_red
+                //     }
+                // ],
+                graphs: [
+                    {
+                        label: 'Assigned vs Unassigned courses',
+                        color: [
+                            color_blue,
+                            color_green
+                        ],
+                        value: [
+                            20,
+                            180
+                        ]
+                    },
+                    {
+                        label: 'Lead Coach vs Assisting ...',
+                        color: [
+                            color_blue,
+                            color_green,
+                            color_red
+                        ],
+                        value: [
+                            20,
+                            10,
+                            150,
+
+                        ]
+                    },
+                    {
+                        label: 'Published vs Daraft courses',
+                        color: [
+                            color_blue,
+                            color_green
+                        ],
+                        value: [
+                            30,
+                            70
+                        ]
+                    },
+                    {
+                        label: 'Rejoion vs drop-off rate',
+                        color: [
+                            color_blue,
+                            color_green
+                        ],
+                        value: [
+                            80,
+                            10
+                        ]
+                    },
+                ]
+            });
+        });
+    </script>
+    <script>
+        var pie = new d3pie("piechart_dashbord", {
+            // header: {
+            //     title: {
+            //         text: "A Very Simple Pie",
+            //         fontSize: 30,
+            //         "font": "open sans"
+            //     }
+            // },
+            "size": {
+                "canvasWidth": 520,
+                "pieInnerRadius": "0%",
+                "pieOuterRadius": "30%"
+            },
+            "labels": {
+                "outer": {
+                    "pieDistance": 10
+                },
+                "inner": {
+                    "hideWhenLessThanPercentage": 3
+                },
+                "mainLabel": {
+                    "fontSize": 11
+                },
+                "percentage": {
+                    "color": "#ffffff",
+                    "decimalPlaces": 0
+                },
+                "value": {
+                    "color": "#adadad",
+                    "fontSize": 11
+                },
+                "lines": {
+                    "enabled": true
+                },
+                "truncation": {
+                    "enabled": true
+                }
+            },
+            data: {
+                content: [
+                    {
+                        "label": "Registration rate 52.6%",
+                        "value": 520000,
+                        "color": "#e36860",
+                    },
+                    {
+                        "label": "Cancellatinos 10.5%",
+                        "value": 100000,
+                        "color": "#b93b61"
+                    },
+                    {
+                        "label": "Re-join rate 19.3%",
+                        "value": 190000,
+                        "color": "#87155d"
+                    },
+                    {
+                        "label": "Publish Courses 19.3%",
+                        "value": 170000,
+                        "color": "#ff9d60"
+                    },
+                ]
+            }
+        });
+        var pie = new d3pie("radio_dashbord", {
+            // header: {
+            //     title: {
+            //         text: "A Very Simple Pie",
+            //         fontSize: 30,
+            //         "font": "open sans"
+            //     }
+            // },
+            "size": {
+                "canvasWidth": 350,
+                "pieInnerRadius": "50%",
+                "pieOuterRadius": "59%"
+            },
+            "size": {
+                "canvasWidth": 520,
+                "pieInnerRadius": "0%",
+                "pieOuterRadius": "30%"
+            },
+            "labels": {
+                "outer": {
+                    "pieDistance": 10
+                },
+                "inner": {
+                    "hideWhenLessThanPercentage": 3
+                },
+                "mainLabel": {
+                    "fontSize": 11
+                },
+                "percentage": {
+                    "color": "#ffffff",
+                    "decimalPlaces": 0
+                },
+                "value": {
+                    "color": "#adadad",
+                    "fontSize": 11
+                },
+                "lines": {
+                    "enabled": true
+                },
+                "truncation": {
+                    "enabled": true
+                }
+            },
+            data: {
+                content: [
+                    {
+                        "label": "Courses sold 90.7%",
+                        "value": 900000,
+                        "color": "#ff5757",
+                    },
+                    {
+                        "label": "Kits & equipments sold 9.3%",
+                        "value": 100000,
+                        "color": "#d91665"
+                    },
+                ]
+            }
+        });
+    </script>
+    <script src="/static/js/fullcalendar/main.js"></script>
+    <!-- Javascript-->
+    <script src="/static/js/core.min.js"></script>
+    <script src="/static/js/authentication/auth.js"></script>
+    <script src="/static/js/permissions/permission.js"></script>
+
+    <script src="/static/js/script.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <script>
+        function onLoad() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init();
+            });
+        }
+
+    </script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/static/js/dashboard/dashboard.js"></script>
+    <script src="/static/js/exportCSV/export_booked_csv_data.js"></script>
+    <script src="/static/js/core.min.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>

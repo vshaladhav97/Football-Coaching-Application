@@ -1,0 +1,301 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <!-- Site Title-->
+    <title>Coach</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link">
+    <link rel="stylesheet" href="/static/css/globalStyling.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+              #imageUpload
+              {
+                  display: none;
+              }
+
+              #profileImage
+              {
+                  cursor: pointer;
+              }
+
+              #profile-container {
+                  width: 150px;
+                  height: 150px;
+                  overflow: hidden;
+                  -webkit-border-radius: 50%;
+                  -moz-border-radius: 50%;
+                  -ms-border-radius: 50%;
+                  -o-border-radius: 50%;
+                  border-radius: 50%;
+              }
+
+              #profile-container img {
+                  width: 150px;
+                  height: 150px;
+              }
+
+              .modal-confirm {
+                color: #636363;
+                width: 325px;
+                font-size: 14px;
+              }
+                .modal-confirm .modal-content {
+                    padding: 20px;
+                    border-radius: 5px;
+                    border: none;
+                }
+                .modal-confirm .modal-header {
+                    border-bottom: none;
+                    position: relative;
+                }
+                .modal-confirm h4 {
+                    text-align: center;
+                    font-size: 26px;
+                    margin: 30px 0 -15px;
+                }
+                .modal-confirm .form-control, .modal-confirm .btn {
+                    min-height: 40px;
+                    border-radius: 3px;
+                }
+                .modal-confirm .close {
+                    position: absolute;
+                    top: -5px;
+                    right: -5px;
+                }
+            .modal-confirm .modal-footer {
+                border: none;
+                text-align: center;
+                border-radius: 5px;
+                font-size: 13px;
+            }
+            .modal-confirm .icon-box {
+                color: #fff;
+                position: absolute;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                top: -70px;
+                width: 95px;
+                height: 95px;
+                border-radius: 50%;
+                z-index: 9;
+                background: #82ce34;
+                padding: 15px;
+                text-align: center;
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+            }
+            .modal-confirm .icon-box i {
+                font-size: 58px;
+                position: relative;
+                top: 3px;
+            }
+            .modal-confirm.modal-dialog {
+                margin-top: 80px;
+            }
+            .modal-confirm .btn {
+                color: #fff;
+                border-radius: 4px;
+                background: #82ce34;
+                text-decoration: none;
+                transition: all 0.4s;
+                line-height: normal;
+                border: none;
+            }
+            .modal-confirm .btn:hover, .modal-confirm .btn:focus {
+                background: #6fb32b;
+                outline: none;
+            }
+            .trigger-btn {
+                display: inline-block;
+                margin: 100px auto;
+            }
+    </style>
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-body">
+        <div class="preloader-item"></div>
+    </div>
+</div>
+<!-- Page-->
+<div class="page">
+    <!-- Page Header-->
+    {% include 'header.html' %}
+    <!-- Section Breadcrumbs-->
+    <section class="section section-variant-1 bg-gray-100" id="login-div">
+        <div class="container">
+          <div class="row row-50 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-6">
+              <div class="card-login-register" id="card-l-r">
+                <div class="card-top-panel">
+                  <div class="card-top-panel-left">
+                    <h5 class="card-title card-title-login">Add Coach</h5>
+                  </div>
+                </div>
+                <div class="card-form">
+                  <form class="rd-form rd-mailform" id="coach-add" data-form-output="form-output-global" onSubmit="return false;" >
+                    <div class="form-wrap">
+                      <strong><span style="color:red;">*</span> Marked fields are mandatory</strong>
+                    </div>
+                    <div class="form-wrap">
+                      <label class="form-label" for="email">E-mail <span style="color:red;">*</span></label>
+                      <input class="form-input" id="email" type="email" name="email" maxlength="50" autocomplete="off"  data-constraints="@Email @Required">
+                    </div>
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select class="form-input select2" style="width: 100%" id="role" name="role">
+
+                        </select>
+                    </div>
+                    <div class="form-wrap">
+                      <label class="form-label" for="first_name">First Name <span style="color:red;">*</span></label>
+                      <input class="form-input" id="first_name" type="text" name="first_name" maxlength="50" data-constraints="@Required">
+                    </div>
+                    <div class="form-wrap">
+                      <label class="form-label" for="last_name">Last Name <span style="color:red;">*</span></label>
+                      <input class="form-input" id="last_name" type="text" name="last_name" maxlength="50" data-constraints="@Required">
+                    </div>
+                    <div class="form-wrap">
+                      <label class="form-label" for="mobile">Mobile <span style="color:red;">*</span></label>
+                      <input class="form-input" id="mobile" type="text" name="mobile" maxlength="15"  data-constraints="@Required">
+                    </div>
+                    <div class="form-wrap">
+                      <label class="form-label" for="landline">Landline</label>
+                      <input class="form-input" id="landline" type="text" name="landline" maxlength="50">
+                    </div>
+                    <div class="form-wrap">
+                      <label class="form-label" for="address">Address <span style="color:red;">*</span></label>
+                      <input class="form-input" id="address" type="text" name="address" maxlength="1000" data-constraints="@Required">
+                    </div>
+                    <div class="form-wrap">
+                      <label class="form-label" for="postal_code">Postal code <span style="color:red;">*</span></label>
+                      <input class="form-input" id="postal_code" type="text" name="postal_code" maxlength="10" data-constraints="@Required">
+                    </div>
+                    <div class="form-wrap">
+                        <label class="form-label" for="town">Town <span
+                                style="color:red;">*</span></label>
+                        <input class="form-input" id="town" type="text" name="town" maxlength="50"
+                               data-constraints="@Required">
+                    </div>
+                    <div class="form-wrap">
+                                   <label class="form-label" for="profile_image"><span
+                                           style="color:red;">*</span></label>
+                        <input class="form-input" id="profile_image" type="file" name="profile_image"
+                               maxlength="10" data-constraints="@Required" multiple>
+                    </div>
+                     <div class="form-wrap">
+                      <label class="form-label" for="password">Password <span style="color:red;">*</span></label>
+                      <input class="form-input" id="password" type="password" name="password" minlength="12" maxlength="20" onKeyUp="checkPasswordStrength();" data-constraints="@Required">
+                       <strong style="font-size:11px">Password must be at least 12 characters with alpha numeric and special characters</strong>
+                    </div>
+
+                    <div id="password-strength-status"></div>
+                    <button class="button button-lg button-primary button-block" id="coach_registration">Save</button>
+                  </form>
+<!--                  <div class="group-sm group-sm-justify group-middle"><a class="button button-google button-icon button-icon-left button-round" href="#"><span class="icon fa fa-google-plus"></span><span>Google+</span></a><a class="button button-twitter button-icon button-icon-left button-round" href="#"><span class="icon fa fa-twitter"></span><span>Twitter</span></a><a class="button button-facebook button-icon button-icon-left button-round" href="#"><span class="icon fa fa-facebook"></span><span>Facebook</span></a></div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Registered Successfully</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--        <button type="button" class="btn btn-primary">Send message</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+<!--                    <div class="icon-box">-->
+<!--                        <i class="material-icons">&#xE876;</i>-->
+<!--                    </div>-->
+                    <h4 class="modal-title w-100">Awesome!</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Coach created.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Footer-->
+    {% include 'footer.html' %}
+</div>
+<!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
+<!-- Javascript-->
+<script src="/static/js/core.min.js"></script>
+<script src="/static/js/script.js"></script>
+<script src="/static/js/coach/coach.js"></script>
+<script src="/static/js/coach/coach_add.js"></script>
+<script src="/static/js/authentication/auth.js"></script>
+<script src="/static/js/permissions/permission.js"></script>
+<script src="/static/js/course/cart_count.js"></script>
+<script>
+
+    function checkPasswordStrength() {
+        var number = /([0-9])/;
+        var alphabets = /([a-zA-Z])/;
+        var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+        if($('#password').val().length<12) {
+        $('#password-strength-status').removeClass();
+        $('#password-strength-status').addClass('weak-password');
+        $('#password-strength-status').html("Weak (should be atleast 12 characters.)");
+        } else {
+        if($('#password').val().match(number) && $('#password').val().match(alphabets) && $('#password').val().match(special_characters)) {
+        $('#password-strength-status').removeClass();
+        $('#password-strength-status').addClass('strong-password');
+        $('#password-strength-status').html("Strong");
+        } else {
+        $('#password-strength-status').removeClass();
+        $('#password-strength-status').addClass('medium-password');
+        $('#password-strength-status').html("Medium (should include alphabets, numbers and special characters.)");
+      }}}
+
+      $("#profileImage").click(function(e) {
+    $("#imageUpload").click();
+});
+
+function fasterPreview( uploader ) {
+    if ( uploader.files && uploader.files[0] ){
+          $('#profileImage').attr('src',
+             window.URL.createObjectURL(uploader.files[0]) );
+    }
+}
+
+$("#imageUpload").change(function(){
+    fasterPreview( this );
+});
+</script>
+</body>
+</html>

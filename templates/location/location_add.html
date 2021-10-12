@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+<head>
+    <!-- Site Title-->
+    <title>Location</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-signin-client_id"
+        content="912979131888-dbcvct33u7aja0i4odm79qf7o5u7i2ru.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+        href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link">
+    <link rel="stylesheet" href="/static/css/globalStyling.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        #getCompany select {
+            display: inline;
+    position: relative;
+    color: #9b9b9b;
+    background-color: #fff;
+    padding: 17px 19px;
+    border-radius: 3px;
+    text-decoration: none;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!--    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>-->
+    <div class="preloader">
+        <div class="preloader-body">
+            <div class="preloader-item"></div>
+        </div>
+    </div>
+    <!-- Page-->
+    <div class="page">
+        <!-- Page Header-->
+        {% include 'header.html' %}
+
+        <section class="section section-variant-1 bg-gray-100" id="login-div">
+            <div class="container-fluid">
+                <h5 style="text-align:center; color:#3A5674">Location</h5>
+                <div class="row">
+                    <div class="col-md-9">
+                        <form id="location-add">
+                            <div class="form-group d-flex"> 
+                                <label><input type="radio" id="new_company_button" name="select" checked="checked"/> Add new Company</label>
+                                <label><input type="radio" name="select" /> Select Existing Company</label>
+                            </div>
+                            <input type="hidden" name="counter" id="counter" value="0">
+                            
+                            <div class="row profile_data locations_" id="newCompany"> 
+                                <div class="col-md-12 " id="addCompany">
+                                    <div class="form-group d-flex">
+                                        <label for="company" class="col-form-label"><strong>Company: <sup
+                                                    style="color: red;">*</sup></strong></label>
+                                        <div class="" style="margin-left: 5px;">
+                                            <input type="text" class="form-control" id="company" name="company">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="existingCompany"> 
+
+                                <div class="col-md-12 " id="getCompany" style="display: none;">
+                                    
+                                    <label  class="col-form-label"><strong>New Company: <sup
+                                        style="color: red;">*</sup></strong>
+                                      <select lass="form-control" id="company_name"
+                                      name="company_name" required>
+                                        <option>Select Company Name</option>
+                                          </select>
+                                    </label>
+                                  </div>
+                            </div>
+                            
+                            <div class="row" id="venue-section">
+
+                            </div>
+                            <div class="row" style="margin-top:0px;">
+                                <div class="col-md-4">
+                                    <a class="btn btn-default add_venue_btn" id="venue-add"
+                                        style="background-color: #9b9b9b;border-color: #9b9b9b;color:white;border-color:#00A9E5; width:150px;"
+                                        onclick="addVenueSection()">
+                                        <i class="fa fa-plus"></i> Add Venue
+                                    </a>
+
+                                </div>
+                                <div class="col-md-4">
+
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" id="location_submit" class="btn btn-default"
+                                        style="background-color: #9b9b9b;border-color: #9b9b9b;color:white;border-color:green; width:120px; float:right;">
+                                        <i class="fa fa-plus"></i> Publish
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-3 margin_left_0 reviews_setting">
+                        <div class="card">
+                            <div class="card-body" style="height:1137px;">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            <a class="float-left"
+                                                href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman
+                                                    Akash</strong></a>
+                                            <br>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+
+                                        </p>
+                                        <div class="clearfix"></div>
+                                        <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                            electronic typesetting, remaining essentially unchanged. It was
+                                            popularised in the 1960s with the release of Letraset sheets containing
+                                            Lorem Ipsum passages, and more recently with desktop publishing software
+                                            like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p>
+                                            <a class="float-right btn btn-outline-primary ml-2"> <i
+                                                    class="fa fa-reply"></i> Reply</a>
+                                            <a class="float-right btn text-white btn-danger"> <i
+                                                    class="fa fa-heart"></i> Like</a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p>
+                                            <a class="float-left"
+                                                href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman
+                                                    Akash</strong></a>
+                                            <br>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+
+                                        </p>
+                                        <div class="clearfix"></div>
+                                        <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                            electronic typesetting, remaining essentially unchanged. It was
+                                            popularised in the 1960s with the release of Letraset sheets containing
+                                            Lorem Ipsum passages, and more recently with desktop publishing software
+                                            like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p>
+                                            <a class="float-right btn btn-outline-primary ml-2"> <i
+                                                    class="fa fa-reply"></i> Reply</a>
+                                            <a class="float-right btn text-white btn-danger"> <i
+                                                    class="fa fa-heart"></i> Like</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--            <div class="row row-50 justify-content-center">-->
+                <!--                <div class="col-md-10 col-lg-8 col-xl-6">-->
+                <!--                    <div class="card-login-register" id="card-l-r">-->
+                <!--                        <div class="card-top-panel">-->
+                <!--                            <h5 class="card-title card-title-login">Profile</h5>-->
+                <!--                        </div>-->
+                <!--                        <div class="card-form">-->
+                <!--                            <form class="rd-form rd-mailform" id="update-password1"-->
+                <!--                                  data-form-output="form-output-global"-->
+                <!--                                  onSubmit="return false;">-->
+
+
+                <!--                                <div id="password-strength-status"></div>-->
+                <!--                                &lt;!&ndash;                    <div class="form-wrap">&ndash;&gt;-->
+                <!--                                &lt;!&ndash;                      <label class="form-label" for="form-login-password-3">Repeat Password</label>&ndash;&gt;-->
+                <!--                                &lt;!&ndash;                      <input class="form-input" id="form-login-password-3" type="password" name="password" data-constraints="@Required">&ndash;&gt;-->
+                <!--                                &lt;!&ndash;                    </div>&ndash;&gt;-->
+                <!--                                <button type="submit" class="button button-lg button-primary button-block">-->
+                <!--                                    Save-->
+                <!--                                </button>-->
+                <!--                            </form>-->
+                <!--                            &lt;!&ndash;                  <div class="group-sm group-sm-justify group-middle"><a class="button button-google button-icon button-icon-left button-round" href="#"><span class="icon fa fa-google-plus"></span><span>Google+</span></a><a class="button button-twitter button-icon button-icon-left button-round" href="#"><span class="icon fa fa-twitter"></span><span>Twitter</span></a><a class="button button-facebook button-icon button-icon-left button-round" href="#"><span class="icon fa fa-facebook"></span><span>Facebook</span></a></div>&ndash;&gt;-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--            </div>-->
+            </div>
+        </section>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Registered Successfully</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!--        <button type="button" class="btn btn-primary">Send message</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--                    <div class="icon-box">-->
+                        <!--                        <i class="material-icons">&#xE876;</i>-->
+                        <!--                    </div>-->
+                        <h4 class="modal-title w-100">Awesome!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Location Created.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Footer-->
+        {% include 'footer.html' %}
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="/static/js/core.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/authentication/auth.js"></script>
+    <script src="/static/js/permissions/permission.js"></script>
+    <script src="/static/js/course/cart_count.js"></script>
+    <script src="/static/js/master/location_add.js"></script>
+    <script src="/static/js/exportCSV/export_booked_csv_data.js"></script>
+    <script>
+        // $('.locations_add_remove .pad_30 .fa.fa-trash').on('click', function () {
+        //     alert('In')
+        //     $('.locations_add_remove').remove();
+        // });
+    </script>
+</body>
+
+</html>

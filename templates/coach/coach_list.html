@@ -1,0 +1,153 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <!-- Site Title-->
+    <title>Coach</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-signin-client_id"
+          content="912979131888-dbcvct33u7aja0i4odm79qf7o5u7i2ru.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link">
+    <link rel="stylesheet" href="/static/css/globalStyling.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/static/css/listing/listing.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-body">
+        <div class="preloader-item"></div>
+    </div>
+</div>
+<!-- Page-->
+<div class="page">
+    <!-- Page Header-->
+    {% include 'header.html' %}
+    <!-- Section Breadcrumbs-->
+    <section class="section section-variant-1 bg-gray-100" id="login-div">
+        <div class="container-xl">
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2><b style="color:#edeff4">Coach</b></h2>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="/coach_add/" class="btn btn-success"><i class="material-icons">&#xE147;</i>
+                                    <span>Add Coach</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <table id="coach-datatable" class="display" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th class="dt_sr_no_label">Sr No.</th>
+                            <th class="profile_label">Profile</th>
+                            <th class="first_name_label">First name</th>
+                            <th class="last_name_label">Last name</th>
+                            <th class="job_type_label">Job type</th>
+                            <th class="town_label">Town</th>
+                            <th class="postcode_label">Postcode</th>
+                            <th class="address_label">Address</th>
+                            <th class="action_btn_label">Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Registered Successfully</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--        <button type="button" class="btn btn-primary">Send message</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <h4 class="modal-title w-100">Awesome!</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Your registration confirmed.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="deleteEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Coach</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="coach" id="coach_id">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="button" class="btn btn-danger" value="Delete" onclick="deleteCoachRecord()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Page Footer-->
+    {% include 'footer.html' %}
+</div>
+<!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
+<!-- Javascript-->
+<script src="/static/js/core.min.js"></script>
+<script src="/static/js/script.js"></script>
+<script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="/static/js/coach/coach.js"></script>
+<script src="/static/js/coach/coach_datatable.js"></script>
+<script src="/static/js/authentication/auth.js"></script>
+<script src="/static/js/permissions/permission.js"></script>
+<script src="/static/js/course/cart_count.js"></script>
+</body>
+</html>

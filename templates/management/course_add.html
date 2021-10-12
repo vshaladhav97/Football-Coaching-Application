@@ -1,0 +1,652 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Course</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="google-signin-client_id"
+      content="912979131888-dbcvct33u7aja0i4odm79qf7o5u7i2ru.apps.googleusercontent.com"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+    <!-- Stylesheets-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900"
+    />
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/fonts.css" />
+    <link rel="stylesheet" href="/static/css/globalStyling.css" />
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+      .select_class {
+        border: 1px solid grey;
+        width: 100%;
+      }
+
+      fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+      }
+
+      legend.scheduler-border {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width: auto;
+        padding: 0 10px;
+        border-bottom: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="preloader-item"></div>
+      </div>
+    </div>
+    <!-- Page-->
+    <div class="page">
+      <!-- Page Header-->
+      {% include 'header.html' %}
+
+      <section
+        class="section section-variant-1 bg-gray-100 management_courses_add"
+        id="login-div"
+      >
+        <div class="container-fluid">
+          <div class="row row-50 justify-content-center">
+            <div class="col-md-9 col-lg-9 col-xl-9">
+              <div class="card-login-register" id="card-l-r">
+                <div class="card-top-panel">
+                  <div class="card-top-panel-left">
+                    <h5 class="card-title card-title-login">Course</h5>
+                  </div>
+                </div>
+                <div class="card-form">
+                  <form id="course-add">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="course-type">Course Type</label>
+                        <select
+                          class="select_class"
+                          id="course-type"
+                          name="course_type"
+                        >
+                          <option>Select Course Type</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-12 no_of_weeks">
+                      <div class="form-group">
+                        <label for="select-weeks-for-evening"
+                          >Select No. Of Weeks</label
+                        >
+                        <select
+                          class="select_class"
+                          id="select-weeks-for-evening"
+                          name="select_no_of_weeks_for_evening_development"
+                        >
+                          <option>No. of weeks</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-12 no_of_weeks_holiday">
+                      <div class="form-group">
+                        <label for="select-weeks-for-holiday"
+                          >Select No. Of Weeks</label
+                        >
+                        <select
+                          class="select_class"
+                          id="select-weeks-for-holiday"
+                          name="select_no_of_weeks_for_holiday"
+                        >
+                          <option>No. of weeks</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-12 joining_fee">
+                      <div class="form-group">
+                        <label for="joining_fee"
+                          >Joining fee (<i
+                            class="fa fa-gbp"
+                            aria-hidden="true"
+                          ></i
+                          >) <sup style="color: red">*</sup></label
+                        >
+                        <div class="no_pad">
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="joining_fee"
+                            name="joining_fee"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12 course_price">
+                      <div class="form-group">
+                        <label for="default_course_rate"
+                          >Default Course Price (<i
+                            class="fa fa-gbp"
+                            aria-hidden="true"
+                          ></i
+                          >) <sup style="color: red">*</sup></label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="default_course_rate"
+                          name="default_course_rate"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12 start_date">
+                      <div class="form-group">
+                        <label for="start_date"
+                          >Start Date <sup style="color: red">*</sup></label
+                        >
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="start_date"
+                          name="start_date"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12 end_date">
+                      <div class="form-group">
+                        <label for="end_date"
+                          >End Date <sup style="color: red">*</sup></label
+                        >
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="end_date"
+                          name="end_date"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+         
+                    <div class="col-md-12 per_day_price align_style">
+                      <div class="form-group">
+                        <label for="single_day"
+                          >Single Day (<i
+                            class="fa fa-gbp"
+                            aria-hidden="true"
+                          ></i
+                          >)&nbsp; <sup style="color: red">*</sup></label
+                        >
+                        <input
+                          type="text"
+                          id="single_day"
+                          name="single_day"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="two_days"
+                          >Two Days (<i class="fa fa-gbp" aria-hidden="true"></i
+                          >)&nbsp;&nbsp;&nbsp;
+                          <sup style="color: red">*</sup></label
+                        >
+                        <input
+                          type="text"
+                          id="two_days"
+                          name="two_days"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="three_days"
+                          >Three Days (<i
+                            class="fa fa-gbp"
+                            aria-hidden="true"
+                          ></i
+                          >)&nbsp;</label
+                        >
+                        <input
+                          type="text"
+                          id="three_days"
+                          name="three_days"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="four_days"
+                          >Four Days (<i
+                            class="fa fa-gbp"
+                            aria-hidden="true"
+                          ></i
+                          >)&nbsp;&nbsp;</label
+                        >
+                        <input
+                          type="text"
+                          id="four_days"
+                          name="four_days"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="five_days"
+                          >Five Days (<i
+                            class="fa fa-gbp"
+                            aria-hidden="true"
+                          ></i
+                          >)&nbsp;&nbsp;&nbsp;</label
+                        >
+                        <input
+                          type="text"
+                          id="five_days"
+                          name="five_days"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12 no_of_groups">
+                      <div class="form-group">
+                        <label for="no_of_groups">No. of groups</label>
+                        <select
+                          class="select_class"
+                          id="no_of_groups"
+                          name="no_of_groups"
+                          required
+                        >
+                          <option>No. of groups</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-12 from_drop_off_time">
+                      <div class="form-group">
+                        <label for="from_drop_off_time"
+                          >From drop off time <sup style="color: red">*</sup></label
+                        >
+                        <input
+                          type="time"
+                          class="form-control"
+                          id="from_drop_off_time"
+                          name="from_drop_off_time"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12 to_drop_off_time">
+                      <div class="form-group">
+                        <label for="to_drop_off_time"
+                          >To drop off time <sup style="color: red">*</sup></label
+                        >
+                        <input
+                          type="time"
+                          class="form-control"
+                          id="to_drop_off_time"
+                          name="to_drop_off_time"
+                          required
+                        />
+                      </div>
+                    </div>
+      
+                    <div class="col-md-12 from_pick_up_time">
+                      <div class="form-group">
+                        <label for="from_pick_up_time"
+                          >From pick up time <sup style="color: red">*</sup></label
+                        >
+                        <input
+                          type="time"
+                          class="form-control"
+                          id="from_pick_up_time"
+                          name="from_pick_up_time"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12 to_pick_up_time">
+                      <div class="form-group">
+                        <label for="to_pick_up_time"
+                          >From pick up time <sup style="color: red">*</sup></label
+                        >
+                        <input
+                          type="time"
+                          class="form-control"
+                          id="to_pick_up_time"
+                          name="to_pick_up_time"
+                          required
+                        />
+                      </div>
+                    </div> -->
+                    
+
+                    <section class="group" id="age-groups"></section>
+                    <section class="course">
+                      <div class="col-md-12">
+                        <fieldset class="scheduler-border">
+                          <legend class="scheduler-border">
+                            Course & Venue Information
+                          </legend>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="company_name"
+                                  >Company name
+                                  <sup style="color: red">*</sup></label
+                                >
+
+                                <select
+                                  class="form-control"
+                                  id="company_name"
+                                  name="company_name"
+                                  required
+                                >
+                                  <option>Select company name</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="location">Venue name</label>
+                                <select
+                                  class="select_class"
+                                  id="location"
+                                  name="location"
+                                  required
+                                >
+                                  <option>Select Venue</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="street"
+                                  >Street <sup style="color: red">*</sup></label
+                                >
+                                <textarea
+                                  class="form-control"
+                                  id="street"
+                                  name="street"
+                                  required
+                                ></textarea>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="town"
+                                  >City/Town
+                                  <sup style="color: red">*</sup></label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="town"
+                                  name="town"
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="postal_code"
+                                  >Post code
+                                  <sup style="color: red">*</sup></label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="postal_code"
+                                  name="postal_code"
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="playing_surface"
+                                  >Playing surface
+                                  <sup style="color: red">*</sup></label
+                                >
+
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="playing_surface_name"
+                                  name="playing_surface"
+                                  hidden
+                                />
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="playing_surface"
+                                  name="playing_surface_id"
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="contact_number"
+                                  >Contact number
+                                  <sup style="color: red">*</sup></label
+                                >
+                                <div class="no_pad">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    id="contact_number"
+                                    name="contact_number"
+                                    required
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="lead_coach"
+                                  >Assign lead coach
+                                  <sup style="color: red">*</sup></label
+                                >
+                                <select
+                                  class="select_class"
+                                  id="lead_coach"
+                                  name="lead_coach"
+                                  required
+                                >
+                                  <option>Select lead coach</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="course_description"
+                                  >About the course
+                                  <sup style="color: red">*</sup></label
+                                >
+                                <textarea
+                                  class="form-control"
+                                  id="course_description"
+                                  name="course_description"
+                                  required
+                                ></textarea>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input type="checkbox"  id="course_default"
+                                name="course_default" /> or use default course
+                                information
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </section>
+                    <div class="text-right next__button">
+                      <button
+                        id="next"
+                        class="btn-primary"
+                        onclick="showSection();"
+                        style="margin-top: 10px"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Registered Successfully</h4>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title w-100">Awesome!</h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-center">Course created.</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success btn-block" data-dismiss="modal">
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="confirmation" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: yellow">
+              <h4 class="modal-title w-100">Welcome confirmation Email!</h4>
+            </div>
+            <div class="modal-body">
+              <input
+                type="text"
+                class="form-control"
+                name="confirmation_email"
+                id="confirmation-email"
+                value="Hello customer your course starts.."
+              />
+              <input type="checkbox" /> Use default email
+              <p>Note: this will be sent 24 hours to the course start date</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-success btn-primary"
+                data-dismiss="modal"
+                onclick="confirmationEmail();"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="overview" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title w-100">Listing Overview!</h4>
+            </div>
+            <div class="modal-body">
+              <span id="course_name"></span>
+              Course Type :<span id="course_type"></span><br />
+              Start Date :<span id="course_start_date"></span><br />
+            </div>
+            <div class="modal-footer">
+              <div class="btn-group">
+                <button class="btn btn-primary" data-dismiss="modal">
+                  Back
+                </button>
+
+                <button
+                  class="btn button-secondary"
+                  data-dismiss="modal"
+                  onclick="approvalCourse()"
+                >
+                  Approval needed
+                </button>
+
+                <button
+                  class="btn btn-primary"
+                  data-dismiss="modal"
+                  onclick="saveCourse()"
+                >
+                  Publish
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Page Footer-->
+      {% include 'footer.html' %}
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="/static/js/core.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/management/course_add.js"></script>
+    <script src="/static/js/authentication/auth.js"></script>
+    <script src="/static/js/permissions/permission.js"></script>
+    <script src="/static/js/course/cart_count.js"></script>
+    <script src="/static/js/exportCSV/export_booked_csv_data.js"></script>
+  </body>
+</html>

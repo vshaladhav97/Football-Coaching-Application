@@ -1,0 +1,193 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <!-- Site Title-->
+    <title>Courses</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-signin-client_id"
+          content="912979131888-dbcvct33u7aja0i4odm79qf7o5u7i2ru.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link">
+    <link rel="stylesheet" href="/static/css/globalStyling.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-body">
+        <div class="preloader-item"></div>
+    </div>
+</div>
+<!-- Page-->
+<div class="page">
+    <!-- Page Header-->
+    {% include 'header.html' %}
+    <!-- Section Breadcrumbs-->
+    <section class="section section-md bg-gray-100">
+        <div class="container">
+            <div class="row row-50" id="course-list">
+                <div class="col-md-12">
+                    <article class="heading-component">
+                        <div class="heading-component-inner">
+                            <h5 class="heading-component-title">All Courses
+                            </h5>
+<!--                            <div class="heading-component-aside">-->
+<!--                                <ul class="list-inline list-inline-xs list-inline-middle">-->
+<!--                                    <li>-->
+<!--                                        <select class="select select-minimal" id="location"-->
+<!--                                                data-placeholder="Select an option"-->
+<!--                                                data-dropdown-class="select-minimal-dropdown" style="min-width: 124px">-->
+<!--                                            <option value="newest first" selected="">Location</option>-->
+<!--                                        </select>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <select class="select select-minimal" id="age-group"-->
+<!--                                                data-placeholder="Select an option"-->
+<!--                                                data-dropdown-class="select-minimal-dropdown" style="min-width: 135px">-->
+<!--                                            <option value="product price" selected="">Age Group</option>-->
+<!--                                        </select>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <select class="select select-minimal" id="course-type"-->
+<!--                                                data-placeholder="Select an option"-->
+<!--                                                data-dropdown-class="select-minimal-dropdown" style="min-width: 150px">-->
+<!--                                            <option value="show 6 per page" selected="">Course Type</option>-->
+<!--                                        </select>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <select class="select select-minimal" id="date"-->
+<!--                                                data-placeholder="Select an option"-->
+<!--                                                data-dropdown-class="select-minimal-dropdown" style="min-width: 150px">-->
+<!--                                            <option value="show 6 per page" selected="">Date</option>-->
+<!--                                            <option value="show 12 per page">show 12 per page</option>-->
+<!--                                            <option value="show 24 per page">show 24 per page</option>-->
+<!--                                        </select>-->
+<!--                                    </li>-->
+<!--                                    &lt;!&ndash;                      <li><a class="icon icon-xs-big icon-gray-500 fa-th active" href="grid-shop.html"></a></li>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                      <li><a class="icon icon-xs-big icon-gray-500 fa-list-ul" href="list-shop.html"></a></li>&ndash;&gt;-->
+<!--                                </ul>-->
+<!--                            </div>-->
+                        </div>
+                    </article>
+                </div>
+                <!--            <div class="col-md-6 col-lg-4">-->
+                <!--              <article class="product">-->
+                <!--                <header class="product-header">-->
+                <!--                  &lt;!&ndash; Badge&ndash;&gt;-->
+                <!--&lt;!&ndash;                  <div class="badge badge-red">Hot<span class="icon material-icons-whatshot"></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+                <!--                  <div class="product-figure"><img src="/media/avatars/screenshot-localhost_8000-2020.12.03-18_38_48.png" alt=""/></div>-->
+                <!--                </header>-->
+                <!--                <footer class="product-content">-->
+                <!--                  <h6 class="product-title"><a href="product-page.html" id="">Nursery</a></h6>-->
+                <!--                  <div class="product-price"><span class="heading-6 product-price-new">$290</span>-->
+                <!--                  </div>-->
+                <!--                </footer>-->
+                <!--              </article>-->
+                <!--            </div>-->
+                <!--            <div class="col-md-6 col-lg-4">-->
+                <!--              <article class="product">-->
+                <!--                <header class="product-header">-->
+                <!--                  &lt;!&ndash; Badge&ndash;&gt;-->
+                <!--&lt;!&ndash;                  <div class="badge badge-red">Hot<span class="icon material-icons-whatshot"></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+                <!--                  <div class="product-figure"><img src="/media/avatars/screenshot-localhost_8000-2020.12.03-18_38_48.png" alt=""/></div>-->
+                <!--                </header>-->
+                <!--                <footer class="product-content">-->
+                <!--                  <h6 class="product-title"><a href="product-page.html" id="">Evening Development</a></h6>-->
+                <!--                  <div class="product-price"><span class="heading-6 product-price-new">$290</span>-->
+                <!--                  </div>-->
+                <!--                </footer>-->
+                <!--              </article>-->
+                <!--            </div>-->
+                <!--            <div class="col-md-6 col-lg-4">-->
+                <!--              <article class="product">-->
+                <!--                <header class="product-header">-->
+                <!--                  &lt;!&ndash; Badge&ndash;&gt;-->
+                <!--&lt;!&ndash;                  <div class="badge badge-red">Hot<span class="icon material-icons-whatshot"></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+                <!--                  <div class="product-figure"><img src="/media/avatars/screenshot-localhost_8000-2020.12.03-18_38_48.png" alt=""/></div>-->
+                <!--                </header>-->
+                <!--                <footer class="product-content">-->
+                <!--                  <h6 class="product-title"><a href="product-page.html" id="">Holiday Camp</a></h6>-->
+                <!--                  <div class="product-price"><span class="heading-6 product-price-new">$290</span>-->
+                <!--                  </div>-->
+                <!--                </footer>-->
+                <!--              </article>-->
+                <!--            </div>-->
+            </div>
+<!--            <nav class="pagination-wrap" aria-label="Page navigation">-->
+<!--                <ul class="pagination">-->
+<!--                    <li class="page-item active"><a class="page-link" href="#">1</a></li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--                    <li class="page-item"><span class="page-link">...</span></li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">14</a></li>-->
+<!--                </ul>-->
+<!--            </nav>-->
+        </div>
+    </section>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Registered Successfully</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--        <button type="button" class="btn btn-primary">Send message</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <h4 class="modal-title w-100">Awesome!</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Your registration confirmed.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Footer-->
+    {% include 'footer.html' %}
+</div>
+<!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
+<!-- Javascript-->
+<script src="/static/js/core.min.js"></script>
+<script src="/static/js/script.js"></script>
+<script src="/static/js/customer/customer.js"></script>
+<script src="/static/js/authentication/auth.js"></script>
+<script src="/static/js/permissions/permission.js"></script>
+<!-- <script src="/static/js/course/cart_count.js"></script> -->
+<!-- <script src="/static/js/course/booked_courses.js"></script> -->
+<script src="/static/js/course/course.js"></script>
+<script src="/static/js/exportCSV/export_booked_csv_data.js"></script>
+</body>
+</html> 

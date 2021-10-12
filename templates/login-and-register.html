@@ -1,0 +1,584 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <!-- Site Title-->
+    <title>Login and Register</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-signin-client_id"
+          content="912979131888-dbcvct33u7aja0i4odm79qf7o5u7i2ru.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link">
+    <link rel="stylesheet" href="/static/css/globalStyling.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+      #imageUpload
+      {
+          display: none;
+      }
+
+      #profileImage
+      {
+          cursor: pointer;
+      }
+
+      #profile-container {
+          width: 150px;
+          height: 150px;
+          overflow: hidden;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          border-radius: 50%;
+      }
+
+      #profile-container img {
+          width: 150px;
+          height: 150px;
+      }
+
+      .modal-confirm {
+	color: #636363;
+	width: 325px;
+	font-size: 14px;
+}
+.modal-confirm .modal-content {
+	padding: 20px;
+	border-radius: 5px;
+	border: none;
+}
+.modal-confirm .modal-header {
+	border-bottom: none;
+	position: relative;
+}
+.modal-confirm h4 {
+	text-align: center;
+	font-size: 26px;
+	margin: 30px 0 -15px;
+}
+.modal-confirm .form-control, .modal-confirm .btn {
+	min-height: 40px;
+	border-radius: 3px;
+}
+.modal-confirm .close {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}
+.modal-confirm .modal-footer {
+	border: none;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 13px;
+}
+.modal-confirm .icon-box {
+	color: #fff;
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: -70px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 9;
+	background: #82ce34;
+	padding: 15px;
+	text-align: center;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-confirm .icon-box i {
+	font-size: 58px;
+	position: relative;
+	top: 3px;
+}
+.modal-confirm.modal-dialog {
+	margin-top: 80px;
+}
+.modal-confirm .btn {
+	color: #fff;
+	border-radius: 4px;
+	background: #82ce34;
+	text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	border: none;
+}
+.modal-confirm .btn:hover, .modal-confirm .btn:focus {
+	background: #6fb32b;
+	outline: none;
+}
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-body">
+        <div class="preloader-item"></div>
+    </div>
+</div>
+<!-- Page-->
+<div class="page">
+    <!-- Page Header-->
+    {% include 'header.html' %}
+    <!-- Section Breadcrumbs-->
+    <section class="section section-variant-1 bg-gray-100" id="login-div">
+        <div class="container">
+            <div class="row row-50 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-6">
+                    <div class="card-login-register" id="card-l-r">
+                        <div class="card-top-panel">
+                            <div class="card-top-panel-left">
+                                <h5 class="card-title card-title-login">Login</h5>
+                                <h5 class="card-title card-title-register">Register</h5>
+                            </div>
+                            <div class="card-top-panel-right"><span class="card-subtitle"><span
+                                    class="card-subtitle-login">Register now</span><span class="card-subtitle-register">Sign in</span></span>
+                                <button class="card-toggle" data-custom-toggle="#card-l-r"><span
+                                        class="card-toggle-circle"></span></button>
+                            </div>
+                        </div>
+                        <div class="card-form card-form-login">
+                            <form class="rd-form rd-mailform">
+                                <div class="form-wrap">
+                                    <label class="form-label" for="login_email">Email</label>
+                                    <input class="form-input" id="login_email" type="text" name="login_email"
+                                           maxlength="50" autocomplete="off" data-constraints="@Email @Required">
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="login_password">Password</label>
+                                    <input class="form-input" id="login_password" type="password" name="login_password"
+                                           autocomplete="off" data-constraints="@Required">
+                                </div>
+                                <div class="form-wrap">
+                                    <span id="error-msg" style="color:red"></span>
+                                </div>
+                                <!--                    <label class="checkbox-inline checkbox-inline-lg checkbox-light">-->
+                                <!--                      <input name="input-checkbox-1" value="checkbox-1" type="checkbox">Remember Me-->
+                                <!--                    </label>-->
+                                <button class="button button-lg button-primary button-block" onclick="login()">Sign in
+                                </button>
+
+                            </form>
+                            <div class="group-sm group-sm-justify group-middle">
+                                <div class="g-signin2" data-onsuccess="onSuccess"></div>
+<!--                                <a id="my-signin2" style="overflow:hidden;"><span class="icon fa fa-google-plus"></span><span>Google+</span></a>-->
+                                <!--                    <a>-->
+                                 <div
+                                    class="fb-login-button"
+                                    data-max-rows="1"
+                                    data-size="xlarge"
+                                    scope="email" onlogin="checkLoginState();"
+                                ></div>
+<!--                                <fb:login-button size="xlarge" scope="email" onlogin="checkLoginState();">-->
+<!--                                </fb:login-button>-->
+                                <!--                    </a>-->
+                                <button onclick="twittersignin()" class="button button-twitter"
+                                   style="height:39px;margin-top:0px;padding-top:10px;overflow:hidden;">
+                                    <span style="color:white;" class="icon fa fa-twitter"></span><span
+                                        style="color:white;"> Login</span>
+                                </button>
+                                <!--                      </a>-->
+                                <!--                    <a class="button button-facebook button-icon button-icon-left button-round" href="#">-->
+                                <!--                      <span class="icon fa fa-facebook"></span><span>Facebook</span>-->
+                                <!--                    </a>-->
+                            </div>
+                        </div>
+                        <div class="card-form card-form-register">
+                            <form class="rd-form rd-mailform" id="sign-up" data-form-output="form-output-global"
+                                  onSubmit="return false;">
+                                <div class="form-wrap">
+                                    <strong><span style="color:red;">*</span> Marked fields are mandatory</strong>
+                                </div>
+                                <div class="form-wrap">
+                                    <center>
+                                        <div id="profile-container">
+                                            <image id="profileImage" src="/media/avatars/profile.png"/>
+                                        </div>
+                                        <label>Upload Image <span style="color:red;">*</span></label>
+                                    </center>
+                                    <input class="form-input" id="imageUpload" type="file" name="image" maxlength="50"
+                                           autocomplete="off" data-constraints="@Required" capture>
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="email">E-mail <span
+                                            style="color:red;">*</span></label>
+                                    <input class="form-input" id="email" type="email" name="email" maxlength="50"
+                                           autocomplete="off" data-constraints="@Email @Required">
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="first_name">First Name <span
+                                            style="color:red;">*</span></label>
+                                    <input class="form-input" id="first_name" type="text" name="first_name"
+                                           maxlength="50" data-constraints="@Required">
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="last_name">Last Name <span
+                                            style="color:red;">*</span></label>
+                                    <input class="form-input" id="last_name" type="text" name="last_name" maxlength="50"
+                                           data-constraints="@Required">
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="mobile">Mobile <span
+                                            style="color:red;">*</span></label>
+                                    <input class="form-input" id="mobile" type="text" name="mobile" maxlength="15"
+                                           data-constraints="@Required">
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="landline">Landline</label>
+                                    <input class="form-input" id="landline" type="text" name="landline" maxlength="50">
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="address">Address <span
+                                            style="color:red;">*</span></label>
+                                    <input class="form-input" id="address" type="text" name="address" maxlength="1000"
+                                           data-constraints="@Required">
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="postal_code">Postal code <span
+                                            style="color:red;">*</span></label>
+                                    <input class="form-input" id="postal_code" type="text" name="postal_code"
+                                           maxlength="10" data-constraints="@Required">
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="country_code">Country Code<span
+                                            style="color:red;">*</span></label>
+                                    <input class="form-input" id="country_code" type="text" name="country_code" value="GB" maxlength="1000"
+                                           data-constraints="@Required">
+                                </div>
+                                <div class="form-wrap">
+                                    <label class="form-label" for="password">Password <span style="color:red;">*</span></label>
+                                    <input class="form-input" id="password" type="password" name="password"
+                                           minlength="12" maxlength="20" onKeyUp="checkPasswordStrength();"
+                                           data-constraints="@Required">
+                                    <strong style="font-size:11px">Password must be at least 12 characters with alpha
+                                        numeric and special characters</strong>
+                                </div>
+
+                                <div id="password-strength-status"></div>
+                                <!--                    <div class="form-wrap">-->
+                                <!--                      <label class="form-label" for="form-login-password-3">Repeat Password</label>-->
+                                <!--                      <input class="form-input" id="form-login-password-3" type="password" name="password" data-constraints="@Required">-->
+                                <!--                    </div>-->
+                                <button class="button button-lg button-primary button-block" id="customer_registration">
+                                    Create new account
+                                </button>
+                            </form>
+                            <!--                  <div class="group-sm group-sm-justify group-middle"><a class="button button-google button-icon button-icon-left button-round" href="#"><span class="icon fa fa-google-plus"></span><span>Google+</span></a><a class="button button-twitter button-icon button-icon-left button-round" href="#"><span class="icon fa fa-twitter"></span><span>Twitter</span></a><a class="button button-facebook button-icon button-icon-left button-round" href="#"><span class="icon fa fa-facebook"></span><span>Facebook</span></a></div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Registered Successfully</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--        <button type="button" class="btn btn-primary">Send message</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <h4 class="modal-title w-100">Awesome!</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Your registration confirmed.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Footer-->
+    {% include 'footer.html' %}
+</div>
+<!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
+<!-- Javascript-->
+<script>
+
+  function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+    console.log('statusChangeCallback');
+    console.log(response);                   // The current login status of the person.
+    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+      testAPI(response.authResponse.accessToken);
+    } else {                                 // Not logged into your webpage or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this webpage.';
+    }
+  }
+
+
+  function checkLoginState() {               // Called when a person is finished with the Login Button.
+    FB.getLoginStatus(function(response) {   // See the onlogin handler
+      statusChangeCallback(response);
+    });
+  }
+
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '378131636810266',
+      cookie     : true,                     // Enable cookies to allow the server to access the session.
+      xfbml      : true,                     // Parse social plugins on this webpage.
+      version    : 'v2.12'           // Use this Graph API version for this call.
+    });
+
+
+   FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+      statusChangeCallback(response);        // Returns the login status.
+    });
+  };
+
+  function testAPI(token) {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+      localStorage.setItem('authenticator',"facebook")
+      console.log(token);
+      $.ajax({
+        type: 'post',
+        url: '/facebook/',
+        data: {
+             "auth_token": token,
+        },
+        success: function(data) {
+            console.log('--------------------------------------')
+            console.log(data.data)
+            sessionStorage.setItem("UserDetails", JSON.stringify(data.tokens));
+            window.location.href  = "/dashboard/"
+        },
+        error: function(data) {
+            console.log(data.status)
+            },
+
+    });
+  }
+
+
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script src="/static/js/core.min.js"></script>
+<script src="/static/js/script.js"></script>
+<script src="/static/js/customer/customer.js"></script>
+<script src="/static/js/authentication/auth.js"></script>
+<script src="/static/js/permissions/permission.js"></script>
+<script>
+  
+  function twitterLogin(){
+          $.ajax({
+          type: 'post',
+          url: 'https://api.twitter.com/oauth/request_token',
+          headers: {
+              authorization: OAuth,
+              oauth_nonce="JYNV5vd8OVc671Y4v1MRiJpXm8kuTUTKTSosSHbZq1vIg1tVWq",
+              oauth_callback="http://localhost:8000",
+              oauth_signature_method="HMAC-SHA1",
+              oauth_timestamp="1300228849",
+              oauth_consumer_key="9DpGUX2KkFY0vEvho6mvmuoK3",
+              oauth_signature="Pc%2BMLdv028fxCErFyi8KXFM%2BddU%3D",
+              oauth_version="1.0" 
+          },
+          success: function(data) {
+              console.log('--------------------------------------')
+              console.log(data.data)
+              sessionStorage.setItem("UserDetails", JSON.stringify(data.tokens));
+              window.location.href  = "/dashboard/"
+          },
+          error: function(data) {
+              console.log(data.status)
+              }
+
+  })
+}
+
+    
+    
+
+</script>
+<script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+      localStorage.setItem('authenticator',"gmail")
+      var id_token = googleUser.getAuthResponse().id_token;
+      $.ajax({
+        type: 'post',
+        url: '/google/',
+        data: {
+             "auth_token": id_token,
+        },
+        success: function(data) {
+            console.log('--------------------------------------')
+            console.log(data.data)
+            sessionStorage.setItem("UserDetails", JSON.stringify(data.tokens));
+            window.location.href  = "/dashboard/"
+        },
+        error: function(data) {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+              console.log('User signed out.');
+              localStorage.clear();
+            });
+            console.log(data.status)
+            alert(data.responseJSON.detail);
+            },
+        });
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 180,
+        'height': 39,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+
+</script>
+<script>
+
+    function checkPasswordStrength() {
+        var number = /([0-9])/;
+        var alphabets = /([a-zA-Z])/;
+        var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+        if($('#password').val().length<12) {
+        $('#password-strength-status').removeClass();
+        $('#password-strength-status').addClass('weak-password');
+        $('#password-strength-status').html("Weak (should be atleast 12 characters.)");
+        } else {
+        if($('#password').val().match(number) && $('#password').val().match(alphabets) && $('#password').val().match(special_characters)) {
+        $('#password-strength-status').removeClass();
+        $('#password-strength-status').addClass('strong-password');
+        $('#password-strength-status').html("Strong");
+        } else {
+        $('#password-strength-status').removeClass();
+        $('#password-strength-status').addClass('medium-password');
+        $('#password-strength-status').html("Medium (should include alphabets, numbers and special characters.)");
+      }}}
+
+      $("#profileImage").click(function(e) {
+    $("#imageUpload").click();
+});
+
+function fasterPreview( uploader ) {
+    if ( uploader.files && uploader.files[0] ){
+          $('#profileImage').attr('src',
+             window.URL.createObjectURL(uploader.files[0]) );
+    }
+}
+
+$("#imageUpload").change(function(){
+    fasterPreview( this );
+});
+
+</script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBD9_q8I48AJj2XLhyBrkIwVrKQ9lbfY2c",
+    authDomain: "first-kick-f1548.firebaseapp.com",
+    projectId: "first-kick-f1548",
+    storageBucket: "first-kick-f1548.appspot.com",
+    messagingSenderId: "876183611868",
+    appId: "1:876183611868:web:e774e5aa02bbd4824e8719"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+<script>
+      function twittersignin(){
+        var provider = new firebase.auth.TwitterAuthProvider();
+        firebase.auth().useDeviceLanguage();
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+        // You can use these server side with your app's credentials to access the Twitter API.
+        console.log(result);
+        var token = result.credential.accessToken;
+        var secret = result.credential.secret;
+        // The signed-in user info.
+        var user = result.user;
+         console.log(user.email);
+
+        localStorage.setItem('authenticator',"twitter")
+        $.ajax({
+          type: 'post',
+          url: '/twitter/',
+          data: {
+               "access_token_key": result.credential.accessToken,
+               "access_token_secret": result.credential.secret,
+          },
+          success: function(data) {
+              console.log('--------------------------------------')
+              console.log(data.data)
+              sessionStorage.setItem("UserDetails", JSON.stringify(data.tokens));
+              window.location.href  = "/dashboard/"
+          },
+          error: function(data) {
+              console.log(data.status)
+          },
+        });
+
+
+
+        // ...
+      }).catch(function(error) {
+        console.log(error);
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+    }
+
+</script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>

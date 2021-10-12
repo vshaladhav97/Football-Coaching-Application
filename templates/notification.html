@@ -1,0 +1,529 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <!-- Site Title-->
+    <title>Notification</title>
+    <meta content="telephone=no" name="format-detection">
+    <meta content="912979131888-dbcvct33u7aja0i4odm79qf7o5u7i2ru.apps.googleusercontent.com"
+          name="google-signin-client_id">
+    <meta content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <link href="/static/images/favicon.ico" rel="icon" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900" rel="stylesheet"
+          type="text/css">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/alert.css">
+    <link rel="stylesheet" href="/static/css/globalStyling.css">
+    <link href="/static/css/style.css" id="main-styles-link" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <style>
+    .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+      #imageUpload
+      {
+          display: none;
+      }
+
+      #profileImage
+      {
+          cursor: pointer;
+      }
+
+      #profile-container {
+          width: 150px;
+          height: 150px;
+          overflow: hidden;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          border-radius: 50%;
+      }
+
+      #profile-container img {
+          width: 150px;
+          height: 150px;
+      }
+
+      .modal-confirm {
+            color: #636363;
+            width: 325px;
+            font-size: 14px;
+      }
+    .modal-confirm .modal-content {
+        padding: 20px;
+        border-radius: 5px;
+        border: none;
+    }
+    .modal-confirm .modal-header {
+        border-bottom: none;
+        position: relative;
+    }
+    .modal-confirm h4 {
+        text-align: center;
+        font-size: 26px;
+        margin: 30px 0 -15px;
+    }
+    .modal-confirm .form-control, .modal-confirm .btn {
+        min-height: 40px;
+        border-radius: 3px;
+    }
+    .modal-confirm .close {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+    }
+    .modal-confirm .modal-footer {
+        border: none;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 13px;
+    }
+    .modal-confirm .icon-box {
+        color: #fff;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: -70px;
+        width: 95px;
+        height: 95px;
+        border-radius: 50%;
+        z-index: 9;
+        background: #82ce34;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    .modal-confirm .icon-box i {
+        font-size: 58px;
+        position: relative;
+        top: 3px;
+    }
+    .modal-confirm.modal-dialog {
+        margin-top: 80px;
+    }
+    .modal-confirm .btn {
+        color: #fff;
+        border-radius: 4px;
+        background: #82ce34;
+        text-decoration: none;
+        transition: all 0.4s;
+        line-height: normal;
+        border: none;
+    }
+    .modal-confirm .btn:hover, .modal-confirm .btn:focus {
+        background: #6fb32b;
+        outline: none;
+    }
+    .trigger-btn {
+        display: inline-block;
+        margin: 100px auto;
+    }
+
+    td span:first-child{
+        float:left;
+    }
+
+    td span:last-child{ /*not compatible with <=IE8*/
+        color:green;
+        float:right;
+    }
+
+  .alert.alert-info {
+        background-color: white;
+        color: #577696;
+        box-shadow: 0 0 5px #9b9b9b;
+    }
+
+    .alert.alert-danger {
+        background-color: white;
+        color: #DF4848;
+        box-shadow: 0 0 5px #9b9b9b;
+    }
+
+    .tablink {
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 17px;
+      width: 33.33%;
+    }
+
+    .tabs-horizontal.tabs-corporate .nav-link::before {
+        background: #35ad7900;
+    }
+    .tabs-horizontal.tabs-corporate .nav-link.active, .tabs-horizontal.tabs-corporate .nav-link:hover {
+        border-bottom: 5px solid #0090e5;
+    }
+    </style>
+</head>
+<body>
+<!--<div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img-->
+<!--        src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820"-->
+<!--        alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>-->
+<!--</div>-->
+<div class="preloader">
+    <div class="preloader-body">
+        <div class="preloader-item"></div>
+    </div>
+</div>
+<!-- Page-->
+<div class="page">
+    <!-- Page Header-->
+    {% include 'header.html' %}
+    <!-- Section Breadcrumbs-->
+    <section class="section section-variant-1 bg-gray-100">
+        <div class="container-fluid">
+            <div class="row" id="blue-notification-row">
+                        <div class="col-md-12">
+                            <div class="flag note">
+                                <div class="flag__image note__icon">
+                                  <i class="fa fa-info-circle"></i>
+                                </div>
+                                <div class="flag__body note__text" id="blue-notification">
+                                </div>
+                                <a href="#" class="note__close">
+                                  <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            <div class="row" style="margin-top:30px;">
+                <div class="col-md-9">
+                    <center>
+                        <h4>Messages</h4>
+                    </center>
+                </div>
+                <div class="col-md-3">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="tabs-custom tabs-horizontal tabs-corporate" id="tabs-shortcodes" style="margin-top:0px;height:748px;">
+                    <!-- Nav tabs-->
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item tablink" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#inbox" style="background-color:#E36960;height:42px;padding-top:10px;">
+                                <i aria-hidden="true" class="fa fa-comments-o"></i>
+                                Inbox
+                            </a>
+                        </li>
+                        <li class="nav-item tablink" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#notifications" style="background: #577696;height:42px;padding-top:10px;color:white;">
+                                <i aria-hidden="true" class="fa fa-bullhorn" ></i>
+                                Notifications
+                            </a>
+                        </li>
+                        <li class="nav-item tablink" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#mytasks" style="background: #000000;color:white;height:42px;padding-top:10px;">
+                                <i aria-hidden="true" class="fa fa-tasks" style="color:white;"></i>
+                                My Task
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes-->
+                    <div class="tab-content" style="height: 605px;">
+                        <div class="tab-pane fade show active" id="inbox">
+                            <div>
+                                <table class="table-custom table-standings table-classic">
+                                    <tbody id="inbox-listing">
+
+                                    </tbody>
+                                    <!-- <tfoot>
+                                        <tr>
+                                            <td colspan="3">
+                                            <a href="/chat/" class="btn btn-primary" style="float: right;">Chat</a>
+                                            </td>
+                                        </tr>
+                                    </tfoot> -->
+                                </table>
+
+                            </div>
+                            <div id="chat-button" style="margin-top: 26px;">
+                                <td colspan="3">
+                                    <a href="/chat/" class="btn btn-primary" style="float: right;">Chat</a>
+                                 </td>
+                            </div>
+                        </div>
+                      
+                        <div class="tab-pane fade" id="notifications">
+                            
+                               
+                            <div class="row chat_notification">
+                                <div class="col-md-12">
+                                    <div class="flag note">
+                                        <div class="flag__image note_red__icon" style="background-color: #476280    !important;">
+                                            <i class="fa fa-info-circle"></i>
+                                        </div>
+                                        <div class="flag__body note_red_text" style="color: #3e4c5b !important;"> 
+                                            No New Messages.
+                                        </div>
+                                        <!-- <a href="#" class="note__close" onclick="close_notification()">
+                                            <i class="fa fa-times"></i>
+                                        </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <table class="table-custom table-standings table-classic">
+                                <tbody id="notifications-listing">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="mytasks">
+                            <table class="table-custom table-standings table-classic">
+                                <tbody id="mytasks-listing">
+                                    <tr>
+                                        <td>
+                                            <span style="text-align:left;">
+                                            <i aria-hidden="true" class="fa fa-tasks fa-lg"></i>
+                                            </span>
+                                        </td>
+                                        <td style="text-align:left;">
+                                                Please complete student attendance register
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-3 margin_left_0 reviews_setting">
+                    <h4 class="t_heading">Rating Alerts</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="profile">
+                                        <li>
+                                            <h5>Excellent</h5>
+                                        </li>
+                                        <li>
+                                            <ul class="d-flex justify-content-center star">
+                                                <li><i class="text-warning fa fa-star"></i></li>
+                                                <li><i class="text-warning fa fa-star"></i></li>
+                                                <li><i class="text-warning fa fa-star"></i></li>
+                                                <li><i class="text-warning fa fa-star"></i></li>
+                                                <li><i class="text-warning fa fa-star"></i></li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>4,87</strong> <span>Average</span> <strong>1325</strong>
+                                            <span>Reviews</span>
+                                        </li>
+                                        <li><a href="#"><i class="text-warning fa fa-star"></i> Reviews</a></li>
+                                    </ul>
+                                    <div class="user_profile d-flex justify-content-between">
+                                        <div>
+                                            <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                            </a>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                        </div>
+                                        <div class="date_rev">
+                                            <span>27th of jan 2021 9:51AM</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                        electronic typesetting, remaining essentially unchanged. It was
+                                        popularised in the 1960s with the release of Letraset sheets containing
+                                        Lorem Ipsum passages, and more recently with desktop publishing software
+                                        like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    <!-- <p>
+                                        <a class="float-right btn btn-outline-primary ml-2"> <i
+                                                class="fa fa-reply"></i> Reply</a>
+                                        <a class="float-right btn text-white btn-danger"> <i
+                                                class="fa fa-heart"></i> Like</a>
+                                    </p> -->
+                                    <div class="user_profile d-flex justify-content-between">
+                                        <div>
+                                            <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                            </a>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                        </div>
+                                        <div class="date_rev">
+                                            <span>27th of jan 2021 9:51AM</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                        electronic typesetting, remaining essentially unchanged. It was
+                                        popularised in the 1960s with the release of Letraset sheets containing
+                                        Lorem Ipsum passages, and more recently with desktop publishing software
+                                        like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    <div class="user_profile d-flex justify-content-between">
+                                        <div>
+                                            <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                            </a>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                        </div>
+                                        <div class="date_rev">
+                                            <span>27th of jan 2021 9:51AM</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                        electronic typesetting, remaining essentially unchanged. It was
+                                        popularised in the 1960s with the release of Letraset sheets containing
+                                        Lorem Ipsum passages, and more recently with desktop publishing software
+                                        like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    <div class="user_profile d-flex justify-content-between">
+                                        <div>
+                                            <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                            </a>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                        </div>
+                                        <div class="date_rev">
+                                            <span>27th of jan 2021 9:51AM</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                        electronic typesetting, remaining essentially unchanged. It was
+                                        popularised in the 1960s with the release of Letraset sheets containing
+                                        Lorem Ipsum passages, and more recently with desktop publishing software
+                                        like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--            <div class="row row-50">-->
+<!--                <div class="col-md-12 col-lg-12 col-xl-12">-->
+<!--                    <div class="card-login-register" id="card-l-r">-->
+<!--                        <div class="card-top-panel">-->
+<!--                            <h5 class="card-title card-title-login">Notifications</h5>-->
+<!--                        </div>-->
+<!--                        <div class="card-form">-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-md-6">-->
+<!--                                    <h4>Recieved Notifications</h4>-->
+
+<!--                                    <ul id="items">-->
+
+<!--                                    </ul>-->
+
+<!--                                </div>-->
+<!--                                <div class="col-md-6">-->
+<!--                                    <h4>Send Notifications</h4>-->
+<!--                                    <form data-form-output="form-output-global" id="update-password"-->
+<!--                                          onSubmit="return false;">-->
+
+<!--                                        <div class="row">-->
+<!--                                            <div class="col-md-12">-->
+<!--                                                <div class="form-group">-->
+<!--                                                    &lt;!&ndash;                                                <label class="form-label" for="message">To <span&ndash;&gt;-->
+<!--                                                    &lt;!&ndash;                                                        style="color:red;">*</span></label>&ndash;&gt;-->
+<!--                                                    <select class="form-control select2 notificationuser" id="user"-->
+<!--                                                            name="user">-->
+<!--                                                        <option value="0">Select User</option>-->
+<!--                                                    </select>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-md-12">-->
+<!--                                                <div class="form-wrap">-->
+<!--                                                    <label class="form-label" for="message">Message <span-->
+<!--                                                            style="color:red;">*</span></label>-->
+<!--                                                    <textarea class="form-input" data-constraints="@Required"-->
+<!--                                                              id="message"-->
+<!--                                                              name="message"></textarea>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+
+<!--                                            <button class="button button-lg button-primary button-block"-->
+<!--                                                    onclick="sendNotification()">-->
+<!--                                                Save-->
+<!--                                            </button>-->
+<!--                                        </div>-->
+
+
+<!--                                    </form>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </section>
+    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal" role="dialog"
+         tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Registered Successfully</h4>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                    <!--        <button type="button" class="btn btn-primary">Send message</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <h4 class="modal-title w-100">Awesome!</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Your registration confirmed.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Footer-->
+    {% include 'footer.html' %}
+</div>
+<!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
+<!-- Javascript-->
+<script src="/static/js/core.min.js"></script>
+<script src="/static/js/script.js"></script>
+<script src="/static/js/customer/customer.js"></script>
+<script src="/static/js/authentication/auth.js"></script>
+<script src="/static/js/notification/notification.js"></script>
+<script src="/static/js/permissions/permission.js"></script>
+
+</body>
+</html>

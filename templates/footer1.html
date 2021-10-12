@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+        href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link">
+    <link rel="stylesheet" href="/static/css/globalStyling.css">
+    <!-- <title>Document</title> -->
+    <style>
+        .ie-panel {
+            display: none;
+            background: #212121;
+            padding: 10px 0;
+            box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+            clear: both;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        html.ie-10 .ie-panel,
+        html.lt-ie-10 .ie-panel {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <footer class="section footer-classic footer-classic-dark context-dark">
+        <div class="footer-classic-main">
+            <div class="container">
+
+                <div class="row row-50">
+                    <div class="col-md-3 text-center text-sm-left">
+                        <p class="text-white t_large">Follow up on social media</p>
+                        <div class="group-md group-middle mt-3">
+                            <div class="group-item">
+                                <ul class="list-inline list-inline-xs">
+                                    <li><a class="icon icon-corporate fa fa-facebook"
+                                            href="https://www.facebook.com/FirstKickFootball/" target="_blank"></a></li>
+                                    <li><a class="icon icon-corporate fa fa-twitter"
+                                            href="https://twitter.com/first_kick" target="_blank"></a></li>
+                                    <li><a class="icon icon-corporate fa fa-youtube"
+                                            href="https://www.youtube.com/channel/UC6QoP9w0Z7PIsyfaT5E-eCA/videos"
+                                            target="_blank"></a></li>
+                                    <li><a class="icon icon-corporate fa fa-instagram"
+                                            href="https://www.instagram.com/firstkickfootball_/" target="_blank"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center text-sm-left">
+                        <p class="text-white t_large">Give us a customer review</p>
+                        <a href="https://www.facebook.com/pg/FirstKickFootball/reviews/" target="_blank"
+                            class="green_link mt-1">>> Start Review</a>
+
+                    </div>
+
+                    <div class="col-md-4 text-center text-sm-left">
+                        <p class="text-white t_large">
+                            <b> COVID-19 policy</b> – to ensure the safety
+                            of all involved at our sessions, Covid-19
+                            regulations are in place at all First Kick
+                            Football sites.
+
+                        </p>
+
+
+                    </div>
+
+                    <div class="col-md-2 text-center text-sm-left">
+                        <img src="//static/images/main/DBS.png" alt="img" class="img-fluid mt-1" />
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-classic-aside footer-classic-darken">
+            <div class="container">
+                <div class="layout-justify">
+                    <!-- Rights-->
+                    <p class="rights"><span>First Kick Management Ltd</span><span>&nbsp;&copy;&nbsp;</span><span
+                            class="copyright-year"></span><span>.&nbsp;</span><a class="link-underline"
+                            href="privacy-policy.html">Privacy Policy</a></p>
+                    <nav class="nav-minimal">
+                        <ul class="nav-minimal-list">
+                            <li class="active"><a href="index.html">HOME</a></li>
+                            <li><a href="#about_us_section" id="about_us">ABOUT US </a></li>
+                            <li><a href="https://firstkick.co.uk/courses/">COURSES</a></li>
+                            <li><a href="https://firstkick.co.uk/shop/">SHOP</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/core.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".rd-navbar-submenu a").click(function (event) {
+                $(".rd-menu.rd-navbar-dropdown.rd-navbar-open-right").toggleClass('open_mobile');
+            });
+        });
+
+        $()
+
+
+        // $('.rd-navbar-darker ul li').on('click', function (e) {
+        //     e.preventDefault()
+        //     $(".rd-navbar-darker ul li").removeClass('active');
+        //     alert('ín')
+        //     $(this).addClass('active');
+        // });
+
+
+        // $(window).load(function () {
+        //     alert('a');
+        //     var path = window.location.href;
+        //     alert(path)
+        //     $(".rd-navbar-nav li a").each(function () {
+        //         if (this.href === path) {
+        //             $(this).addClass('active');
+        //         }
+        //     });
+        // });
+
+    </script>
+</body>
+
+</html>
+
+<!-- Modal Video-->
+<div class="modal modal-video fade" id="modal1" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <img src="/static/images/covid.png" class="img-fluid" alt="img" />
+            </div>
+        </div>
+    </div>
+</div>
+</div>

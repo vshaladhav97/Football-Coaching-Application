@@ -1,0 +1,512 @@
+<header class="section page-header rd-navbar-dark">
+    <!-- RD Navbar-->
+    <div class="rd-navbar-wrap">
+        <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+            data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed"
+            data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
+            data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+            data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="166px" data-xl-stick-up-offset="166px"
+            data-xxl-stick-up-offset="166px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-main"><span></span></button>
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel-inner container">
+                    <div class="rd-navbar-collapse rd-navbar-panel-item rd-navbar-panel-item-left">
+                        <!-- Owl Carousel-->
+                        <div class="owl-carousel-navbar owl-carousel-inline-outer p-0 pt-md-1">
+                            <div class="owl-carousel-inline-wrap">
+                                <div>
+                                    <!-- Post Inline-->
+                                    <article class="post-inline">
+                                        <time class="post-inline-time text_green" datetime="2020"><a href=""
+                                                data-toggle="modal" data-target="#modal1" class="text_green">
+                                                Click here </a> </time>
+                                        <p class="post-inline-title">
+                                            for Covid 19 policy</p>
+                                    </article>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rd-navbar-panel-item rd-navbar-panel-item-right">
+                        <ul class="list-inline list-inline-bordered d-flex">
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i> <span>Contact Support</span>
+                            </li>
+                            <li>
+                                <div class="cart-inline-toggled-outer">
+                                    <!-- Link Cart-->
+                                    <a href="/cart/ " class="link link-cart"><span
+                                            class="link-cart-icon fl-bigmug-line-shopping202 cart-value"><a
+                                                href="/cart/"></a></span></a>
+                                    <!-- Cart Inline-->
+                                    <article class="cart-inline cart-inline-toggled" id="cart-inline">
+                                        <div class="cart-inline-inner">
+                                            <div class="cart-inline-header">
+                                                <h5 class="cart-inline-title">In cart: 2 products</h5>
+                                                <p class="cart-inline-subtitle">total price: $750</p>
+                                            </div>
+                                            <div class="cart-inline-main">
+                                                <!-- Product inline-->
+                                                <article class="product-inline">
+                                                    <div class="product-inline-aside"><a class="product-inline-figure"
+                                                            href="product-page.html"><img class="product-inline-image"
+                                                                src="/static/images/product-Nike-Air-Zoom-Pegasus-67x30.png"
+                                                                alt="" width="67" height="30" /></a></div>
+                                                    <div class="product-inline-main">
+                                                        <p class="heading-7 product-inline-title"><a
+                                                                href="product-page.html">Nike Air Zoom Pegasus</a></p>
+                                                        <ul class="product-inline-meta">
+                                                            <li>
+                                                                <input class="form-input" type="number"
+                                                                    data-zeros="true" value="2" min="1" max="100">
+                                                            </li>
+                                                            <li>
+                                                                <p class="product-inline-price">$500.00</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </article>
+                                                <!-- Product inline-->
+                                                <article class="product-inline">
+                                                    <div class="product-inline-aside"><a class="product-inline-figure"
+                                                            href="product-page.html"><img class="product-inline-image"
+                                                                src="/static/images/product-Nike-Baseball-Hat-55x38.png"
+                                                                alt="" width="55" height="38" /></a></div>
+                                                    <div class="product-inline-main">
+                                                        <p class="heading-7 product-inline-title"><a
+                                                                href="product-page.html">Nike Baseball Hat</a></p>
+                                                        <ul class="product-inline-meta">
+                                                            <li>
+                                                                <input class="form-input" type="number"
+                                                                    data-zeros="true" value="1" min="1" max="100">
+                                                            </li>
+                                                            <li>
+                                                                <p class="product-inline-price">$250.00</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            <div class="cart-inline-footer"><a
+                                                    class="button button-md button-default-outline"
+                                                    href="shopping-cart.html">Go to Cart</a><a
+                                                    class="button button-md button-primary"
+                                                    href="checkout.html">Checkout</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </li>
+                            {% if not login %}
+                            <li><a class="link link-icon link-icon-left link-classic" href="/login/"><span
+                                        class="icon fl-bigmug-line-login12"></span><span
+                                        class="link-icon-text">Login</span></a>
+                            </li>
+                            {% else %}
+                            <li><a class="rd-nav-link" href="#">Profile</a>
+                                <ul class="rd-menu rd-navbar-dropdown">
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="/profile/">My
+                                            Profile</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                            href="/document/">Document</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" onclick="signOut()"><span
+                                                class="link-icon-text">Logout</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            {% endif %}
+
+                            <!--                    <li><a class="link link-icon link-icon-left link-classic" onclick="signOut()"><span class="icon fl-bigmug-line-login12"></span><span class="link-icon-text">Logout</span></a></li>-->
+
+                        </ul>
+                    </div>
+                    <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1"
+                        data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+                </div>
+            </div>
+            <div class="rd-navbar-main">
+                <div class="rd-navbar-main-top">
+                    <div class="rd-navbar-main-container container">
+                        <!-- RD Navbar Brand-->
+                        <div class="rd-navbar-brand"><a class="brand" {% if login %} href="/dashboard/" {%else%}
+                                href="/" {% endif %}><img class="brand-logo " src="/static/images/first_kick_logo.png"
+                                    alt="" width="95" height="126" /></a>
+                        </div>
+                        <!-- RD Navbar List-->
+                        <ul class="rd-navbar-list my_list">
+                            <!-- <li a class="brand" {% if login %} {%else%}
+                            href="/" {% endif %}>Dashboard</li> -->
+                            <li class="rd-navbar-list-item"><a class="rd-navbar-list-link" href="#"><img
+                                        src="/static/images/2.png" alt="" width="95" height="42" /></a></li>
+                            <li class="rd-navbar-list-item"><a class="rd-navbar-list-link" href="#"><img
+                                        src="/static/images/5.png" alt="" width="84" height="45"
+                                        style="margin-left:11px" /></a></li>
+                            <li class="rd-navbar-list-item"><a class="rd-navbar-list-link" href="#"><img
+                                        src="/static/images/11.png" alt="" width="75" height="52" /></a></li>
+                            <li class="rd-navbar-list-item"><a class="rd-navbar-list-link" href="#"><img
+                                        src="/static/images/12.png" alt="" width="120" height="89" /></a></li>
+                        </ul>
+                        <!-- RD Navbar Search-->
+                        <div class="rd-navbar-search">
+                            <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search">
+                                <span></span></button>
+                            <form class="rd-search" action="search-results.html"
+                                data-search-live="rd-search-results-live" method="GET">
+                                <div class="form-wrap">
+                                    <label class="form-label" for="rd-navbar-search-form-input">Enter your search
+                                        request here...</label>
+                                    <input class="rd-navbar-search-form-input form-input"
+                                        id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
+                                    <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                                </div>
+                                <button class="rd-search-form-submit fl-budicons-launch-search81"
+                                    type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="rd-navbar-main-bottom rd-navbar-darker">
+                    <div class="rd-navbar-main-container container">
+                        <!-- RD Navbar Nav-->
+                        <ul class="rd-navbar-nav">
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="/">Home</a>
+                            <li class="rd-nav-item" id="courses_header"><a class="rd-nav-link" id="course_top_header" href="/courses/">Courses</a></li>
+                            {% if login %}
+                            <li class="rd-nav-item master"><a class="rd-nav-link" id="menu_dropdown">Menu</a>
+                                <ul class="rd-menu rd-navbar-dropdown">
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="/dashboard/">Dashboard </a></li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" id="course_listing_header"
+                                            href="/listing/">Listing</a>
+                                    </li>
+                                    <li class="rd-dropdown-item child_header"><a class="rd-dropdown-link" id="child_header" href="/child_list/">Childs
+                                        Profile</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" id="message_header"
+                                            href="/messages/">Messages</a>
+                                    </li>
+                                    <li class="rd-dropdown-item rota rota_in_menu" ><a class="rd-dropdown-link"
+                                        href="/rota/">Rota</a>
+                                     </li>
+                                     <li class="rd-dropdown-item class_register_in_menu class_register"><a
+                                        class="rd-dropdown-link" href="/class_register/">Class Register</a>
+                                    </li>
+                                    <li class="rd-dropdown-item venue_analytics_in_menu venue_analytics" ><a
+                                        class="rd-dropdown-link" href="/venue_analytics/">Venue Analytics</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" id="booking_header"
+                                            href="/bookings/">Booking</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" id="staff_header"
+                                            href="/staff_list/">Staff</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" id="coach_header"
+                                            href="/coach_list/">coach</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" id="parent_header"
+                                            href="/parents/">Parents</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" id="location_header"
+                                            href="/location_list/">Location</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" id="reviews_header" href="#">Reviews</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" id="financial_report_header"
+                                            href="#">Financial Report</a>
+                                    </li>
+
+                                    <li class="rd-dropdown-item download" id="download_header"><a class="rd-dropdown-link"
+                                            onclick="downloadCSV()">Download</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            {% endif %}
+
+                            <!--                                          <ul class="rd-menu rd-navbar-dropdown">-->
+                            <!--                                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Niche Templates</a>-->
+                            <!--                                                              <ul class="rd-menu rd-navbar-dropdown">-->
+                            <!--                                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../soccer">Soccer</a>-->
+                            <!--                                                                </li>-->
+                            <!--                                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../baseball">Baseball</a>-->
+                            <!--                                                                </li>-->
+                            <!--                                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../basketball">Basketball</a>-->
+                            <!--                                                                </li>-->
+                            <!--                                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../billiards">Billiards</a>-->
+                            <!--                                                                </li>-->
+                            <!--                                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../bowling">Bowling</a>-->
+                            <!--                                                                </li>-->
+                            <!--                                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../rugby">Rugby</a>-->
+                            <!--                                                                </li>-->
+                            <!--                                                              </ul>-->
+                            <!--                                                            </li>-->
+                            <!--                                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Home Types</a>-->
+                            <!--                                                                <ul class="rd-menu rd-navbar-dropdown">-->
+                            <!--                                                                  <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="index.html">Home Soccer</a>-->
+                            <!--                                                                  </li>-->
+                            <!--                                                                  <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="home-baseball.html">Home Baseball</a>-->
+                            <!--                                                                  </li>-->
+                            <!--                                                                  <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="home-basketball.html">Home Basketball</a>-->
+                            <!--                                                                  </li>-->
+                            <!--                                                                  <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="home-billiards.html">Home Billiards</a>-->
+                            <!--                                                                  </li>-->
+                            <!--                                                                  <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="home-bowling.html">Home Bowling</a>-->
+                            <!--                                                                  </li>-->
+                            <!--                                                                  <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="home-rugby.html">Home Rugby</a>-->
+                            <!--                                                                  </li>-->
+                            <!--                                                                </ul>-->
+                            <!--                                                            </li>-->
+                            <!--                                                          </ul>-->
+                            </li>
+                            {% if login %}
+                            <!-- <li class="rd-nav-item" id="student-menu"><a class="rd-nav-link"
+                                    href="/student_list/">Student</a>
+                            </li> -->
+                            <li class="rd-nav-item addstudent" id="student-add-menu"><a class="rd-nav-link"
+                                    href="/booked_courses_page/">Map student to course</a>
+                            </li>
+                            {% endif %}
+                            <!--                                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Features</a>-->
+                            <!--                                             <article class="rd-menu rd-navbar-megamenu rd-megamenu-2-columns context-light">-->
+                            <!--                                                                              <div class="rd-megamenu-main">-->
+                            <!--                                                                                                  <div class="rd-megamenu-item rd-megamenu-item-nav">-->
+                            <!--                                                                                                    &lt;!&ndash; Heading Component&ndash;&gt;-->
+                            <!--                                                                                                    <article class="heading-component heading-component-simple">-->
+                            <!--                                                                                                      <div class="heading-component-inner">-->
+                            <!--                                                                                                        <h5 class="heading-component-title">Elements-->
+                            <!--                                                                                                        </h5>-->
+                            <!--                                                                                                      </div>-->
+                            <!--                                                                                                    </article>-->
+                            <!--                                                                                                    <div class="rd-megamenu-list-outer">-->
+                            <!--                                                                                                      <ul class="rd-megamenu-list">-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="shortcodes.html">Shortcodes</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="typography.html">Typography</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="blog-elements.html">Blog Elements</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="sport-elements.html">Sport Elements</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="shop-elements.html">Shop Elements</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="404-error-page.html">404 Error Page</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="privacy-policy.html">Privacy Policy</a></li>-->
+                            <!--                                                                                                      </ul>-->
+                            <!--                                                                                                      <ul class="rd-megamenu-list">-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="about-us.html">About Us</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="gallery.html">Gallery</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="albums.html">Albums</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="search-results.html">Search Results</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="coming-soon.html">Coming Soon</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="contact-us.html">Contact Us</a></li>-->
+                            <!--                                                                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="login-and-register.html">Login and Register</a></li>-->
+                            <!--                                                                                                      </ul>-->
+                            <!--                                                                                                    </div>-->
+                            <!--                                                                                                  </div>-->
+                            <!--                                                                                <div class="rd-megamenu-item rd-megamenu-item-content">-->
+                            <!--                                                                                  &lt;!&ndash; Heading Component&ndash;&gt;-->
+                            <!--                                                                                  <article class="heading-component heading-component-simple">-->
+                            <!--                                                                                    <div class="heading-component-inner">-->
+                            <!--                                                                                      <h5 class="heading-component-title">Latest News-->
+                            <!--                                                                                      </h5><a class="button button-xs button-gray-outline" href="news-1.html">See all News</a>-->
+                            <!--                                                                                    </div>-->
+                            <!--                                                                                  </article>-->
+                            <!--                                                                                  <div class="row row-20">-->
+                            <!--                                                                                    <div class="col-lg-6">-->
+                            <!--                                                                                            &lt;!&ndash; Post Classic&ndash;&gt;-->
+                            <!--                                                                                            <article class="post-classic">-->
+                            <!--                                                                                              <div class="post-classic-aside"><a class="post-classic-figure" href="blog-post.html"><img src="/static/images/megamenu-post-1-93x94.jpg" alt="" width="93" height="94"/></a></div>-->
+                            <!--                                                                                              <div class="post-classic-main">-->
+                            <!--                                                                                                &lt;!&ndash; Badge&ndash;&gt;-->
+                            <!--                                                                                                <div class="badge badge-secondary">The Team-->
+                            <!--                                                                                                </div>-->
+                            <!--                                                                                                <p class="post-classic-title"><a href="blog-post.html">Raheem Sterling turns the tide for Manchester</a></p>-->
+                            <!--                                                                                                <div class="post-classic-time"><span class="icon mdi mdi-clock"></span>-->
+                            <!--                                                                                                  <time datetime="2020">April 15, 2020</time>-->
+                            <!--                                                                                                </div>-->
+                            <!--                                                                                              </div>-->
+                            <!--                                                                                            </article>-->
+                            <!--                                                                                    </div>-->
+                            <!--                                                                                    <div class="col-lg-6">-->
+                            <!--                                                                                            &lt;!&ndash; Post Classic&ndash;&gt;-->
+                            <!--                                                                                            <article class="post-classic">-->
+                            <!--                                                                                              <div class="post-classic-aside"><a class="post-classic-figure" href="blog-post.html"><img src="/static/images/megamenu-post-2-93x94.jpg" alt="" width="93" height="94"/></a></div>-->
+                            <!--                                                                                              <div class="post-classic-main">-->
+                            <!--                                                                                                &lt;!&ndash; Badge&ndash;&gt;-->
+                            <!--                                                                                                <div class="badge badge-primary">The League-->
+                            <!--                                                                                                </div>-->
+                            <!--                                                                                                <p class="post-classic-title"><a href="blog-post.html">Prem in 90 seconds: Chelsea's crisis is over!</a></p>-->
+                            <!--                                                                                                <div class="post-classic-time"><span class="icon mdi mdi-clock"></span>-->
+                            <!--                                                                                                  <time datetime="2020">April 15, 2020</time>-->
+                            <!--                                                                                                </div>-->
+                            <!--                                                                                              </div>-->
+                            <!--                                                                                            </article>-->
+                            <!--                                                                                    </div>-->
+                            <!--                                                                                    <div class="col-lg-6">-->
+                            <!--                                                                                            &lt;!&ndash; Post Classic&ndash;&gt;-->
+                            <!--                                                                                            <article class="post-classic">-->
+                            <!--                                                                                              <div class="post-classic-aside"><a class="post-classic-figure" href="blog-post.html"><img src="/static/images/megamenu-post-3-93x94.jpg" alt="" width="93" height="94"/></a></div>-->
+                            <!--                                                                                              <div class="post-classic-main">-->
+                            <!--                                                                                                &lt;!&ndash; Badge&ndash;&gt;-->
+                            <!--                                                                                                <div class="badge badge-primary">The League-->
+                            <!--                                                                                                </div>-->
+                            <!--                                                                                                <p class="post-classic-title"><a href="blog-post.html">Good vibes back at struggling Schalke</a></p>-->
+                            <!--                                                                                                <div class="post-classic-time"><span class="icon mdi mdi-clock"></span>-->
+                            <!--                                                                                                  <time datetime="2020">April 15, 2020</time>-->
+                            <!--                                                                                                </div>-->
+                            <!--                                                                                              </div>-->
+                            <!--                                                                                            </article>-->
+                            <!--                                                                                    </div>-->
+                            <!--                                                                                    <div class="col-lg-6">-->
+                            <!--                                                                                            &lt;!&ndash; Post Classic&ndash;&gt;-->
+                            <!--                                                                                            <article class="post-classic">-->
+                            <!--                                                                                              <div class="post-classic-aside"><a class="post-classic-figure" href="blog-post.html"><img src="/static/images/megamenu-post-4-93x94.jpg" alt="" width="93" height="94"/></a></div>-->
+                            <!--                                                                                              <div class="post-classic-main">-->
+                            <!--                                                                                                &lt;!&ndash; Badge&ndash;&gt;-->
+                            <!--                                                                                                <div class="badge badge-primary">The League-->
+                            <!--                                                                                                </div>-->
+                            <!--                                                                                                <p class="post-classic-title"><a href="blog-post.html">Liverpool in desperate need of backup players</a></p>-->
+                            <!--                                                                                                <div class="post-classic-time"><span class="icon mdi mdi-clock"></span>-->
+                            <!--                                                                                                  <time datetime="2020">April 15, 2020</time>-->
+                            <!--                                                                                                </div>-->
+                            <!--                                                                                              </div>-->
+                            <!--                                                                                            </article>-->
+                            <!--                                                                                    </div>-->
+                            <!--                                                                                  </div>-->
+                            <!--                                                                                </div>-->
+                            <!--                                                                              </div>-->
+                            <!--                                                                                                &lt;!&ndash; Event Teaser&ndash;&gt;-->
+                            <!--                                                                                                <article class="event-teaser rd-megamenu-footer">-->
+                            <!--                                                                                                  <div class="event-teaser-header">-->
+                            <!--                                                                                                    <div class="event-teaser-caption">-->
+                            <!--                                                                                                      <h5 class="event-teaser-title">Final Europa League 2020</h5>-->
+                            <!--                                                                                                      <time class="event-teaser-time" datetime="2020">Saturday, April 14, 2020</time>-->
+                            <!--                                                                                                    </div>-->
+                            <!--                                                                                                    <div class="event-teaser-teams">-->
+                            <!--                                                                                                      <div class="event-teaser-team">-->
+                            <!--                                                                                                        <div class="unit unit-spacing-xs unit-horizontal align-items-center">-->
+                            <!--                                                                                                          <div class="unit-left"><img class="event-teaser-team-image" src="/static/images/team-bavaria-fc-38x50.png" alt="" width="38" height="50"/>-->
+                            <!--                                                                                                          </div>-->
+                            <!--                                                                                                          <div class="unit-body">-->
+                            <!--                                                                                                            <p class="heading-7">Bavaria</p>-->
+                            <!--                                                                                                            <p class="text-style-1">Germany</p>-->
+                            <!--                                                                                                          </div>-->
+                            <!--                                                                                                        </div>-->
+                            <!--                                                                                                      </div>-->
+                            <!--                                                                                                      <div class="event-teaser-team-divider"><span class="event-teaser-team-divider-text">VS</span></div>-->
+                            <!--                                                                                                      <div class="event-teaser-team">-->
+                            <!--                                                                                                        <div class="unit unit-spacing-xs unit-horizontal align-items-center">-->
+                            <!--                                                                                                          <div class="unit-left"><img class="event-teaser-team-image" src="/static/images/team-sportland-41x55.png" alt="" width="41" height="55"/>-->
+                            <!--                                                                                                          </div>-->
+                            <!--                                                                                                          <div class="unit-body">-->
+                            <!--                                                                                                            <p class="heading-7">sportland</p>-->
+                            <!--                                                                                                            <p class="text-style-1">USA</p>-->
+                            <!--                                                                                                          </div>-->
+                            <!--                                                                                                        </div>-->
+                            <!--                                                                                                      </div>-->
+                            <!--                                                                                                    </div>-->
+                            <!--                                                                                                  </div>-->
+                            <!--                                                                                                  <div class="event-teaser-countdown event-teaser-highlighted">-->
+                            <!--                                                                                                    &lt;!&ndash; Countdown&ndash;&gt;-->
+                            <!--                                                                                                    <div class="countdown countdown-classic" data-type="until" data-time="31 Dec 2020 16:00" data-format="dhms" data-style="short"></div>-->
+                            <!--                                                                                                  </div>-->
+                            <!--                                                                                                  <div class="event-teaser-aside"><a class="event-teaser-link" href="#">Buy Tickets</a></div>-->
+                            <!--                                                                                                </article>-->
+                            <!--                                                                            </article>-->
+                            </li>
+                            {% if login %}
+                            <!-- <li class="rd-nav-item master"><a class="rd-nav-link" href="#">Master</a>
+                                <ul class="rd-menu rd-navbar-dropdown">
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                            href="/location_list/">Location</a>
+                                    </li>
+                                    <li class="rd-dropdown-item superuser"><a class="rd-dropdown-link"
+                                            href="/super_user_list/">Super User</a>
+                                    </li>
+                                    <li class="rd-dropdown-item staff"><a class="rd-dropdown-link"
+                                            href="/staff_list/">Staff</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                            href="/coach_list/">Coach</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                            href="/parents/">User</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                            href="/student_list/">Student</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                            href="/listing/">Courses</a>
+                                    </li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                            href="/booked_courses_page/">Book</a>
+                                    </li>
+                                    <li class="rd-dropdown-item record"><a class="rd-dropdown-link"
+                                            href="/account_record/">Record</a>
+                                    </li>
+                                    <li class="rd-dropdown-item record"><a class="rd-dropdown-link"
+                                            href="/bookings/">Booking List</a>
+                                    </li>
+                                    <li class="rd-dropdown-item record"><a class="rd-dropdown-link"
+                                            href="/child_list/">Child's Profile</a>
+                                    </li>
+                                </ul>
+                            </li> -->
+                            <li class="rd-nav-item coach"><a class="rd-nav-link" href="#">Coach</a>
+                                <ul class="rd-menu rd-navbar-dropdown">
+                                    <li class="rd-dropdown-item venue_analytics" id="venue_analytics"><a
+                                            class="rd-dropdown-link" href="/venue_analytics/">Venue Analytics</a>
+                                    </li>
+                                    <li class="rd-dropdown-item class_register" id="class_register"><a
+                                            class="rd-dropdown-link" href="/class_register/">Class Register</a>
+                                    </li>
+                                    <li class="rd-dropdown-item rota" id="rota"><a class="rd-dropdown-link"
+                                            href="/rota/">Rota</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- <li class="rd-nav-item notification" id="notification"><a class="rd-nav-link"
+                                    href="/messages/">Notifications</a></li> -->
+
+
+                            {% endif %}
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="/shop/">Shop</a>
+                                <!--                                          <ul class="rd-menu rd-navbar-dropdown">-->
+                                <!--                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="shop-elements.html">Shop Elements</a>-->
+                                <!--                                            </li>-->
+                                <!--                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="grid-shop.html">Grid Shop</a>-->
+                                <!--                                            </li>-->
+                                <!--                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="list-shop.html">List Shop</a>-->
+                                <!--                                            </li>-->
+                                <!--                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="fullwidth-shop.html">Fullwidth Shop</a>-->
+                                <!--                                            </li>-->
+                                <!--                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="product-page.html">Product Page</a>-->
+                                <!--                                            </li>-->
+                                <!--                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="shopping-cart.html">Shopping Cart</a>-->
+                                <!--                                            </li>-->
+                                <!--                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="checkout.html">Checkout</a>-->
+                                <!--                                            </li>-->
+                                <!--                                          </ul>-->
+                            </li>
+                        </ul>
+                        <div class="rd-navbar-main-element">
+                            <ul class="list-inline list-inline-sm">
+                                <li><a class="icon icon-xs icon-light fa fa-facebook" href="https://www.facebook.com/FirstKickFootball/" target="_blank"></a></li>
+                                <li><a class="icon icon-xs icon-light fa fa-twitter" href="https://twitter.com/first_kick" target="_blank"></a></li>
+                                <li><a class="icon icon-xs icon-light fa fa-google-plus" href="https://www.youtube.com/channel/UC6QoP9w0Z7PIsyfaT5E-eCA/videos" target="_blank"></a></li>
+                                <li><a class="icon icon-xs icon-light fa fa-instagram" href="https://www.instagram.com/firstkickfootball_/" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script src="/static/js/exportCSV/export_booked_csv_data.js"></script>
+</header>
+
+
+<script>
+    $(document).ready(function () {
+        $('#current_date').text(new Date().toDateString());
+    })
+</script>

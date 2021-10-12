@@ -1,0 +1,616 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Venue Analytics</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+    <!-- Stylesheets-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900"
+    />
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/fonts.css" />
+    <link rel="stylesheet" href="/static/css/alert.css" />
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link" />
+    <link rel="stylesheet" href="/static/js/fullcalendar/main.css" />
+    <link rel="stylesheet" href="/static/css/globalStyling.css" />
+    <style>
+      .card {
+        margin-right: 30px;
+      }
+
+      .count-cards {
+        background-color: #3788d8;
+        color: white;
+      }
+
+      .user-header {
+        color: red;
+        font-weight: bold;
+        padding-left: 12px;
+      }
+
+      .numberCircle {
+        font-size: 1rem;
+        width: 3rem;
+
+        background-color: #3788d8;
+        color: white;
+        padding: 1rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+
+      .form-input {
+        padding: 0px;
+        min-height: 0px;
+      }
+
+      .button-lg {
+        padding: 0px;
+      }
+
+      .select2-container .select2-choice {
+        padding: 0px;
+      }
+
+      .text-center {
+        text-align: left !important;
+      }
+
+      .alert.alert-info {
+        background-color: white;
+        color: #577696;
+        box-shadow: 0 0 5px #9b9b9b;
+      }
+
+      .alert.alert-danger {
+        background-color: #f55145;
+        color: #fff;
+      }
+
+      .btn-link-style {
+        font-size: 10px;
+      }
+
+      .total-fields {
+        background-color: #3788d8;
+        border: 1px solid white;
+        color: black;
+        text-align: center;
+      }
+
+      .total-fields-count {
+        background-color: #3788d8;
+        border: 1px solid white;
+        color: black;
+        text-align: center;
+      }
+
+      .header-btn {
+        color: black;
+      }
+
+      /* #coach-selection{
+            width:200px;
+            padding:20px;
+            height: 150px;
+        } */
+
+      .select2-container {
+        width: 190px !important;
+      }
+
+      /* .selction-option-coach{
+            width:290px;
+            overflow:scroll;
+            height: 20px;
+        } */
+
+      .select2-results {
+        overflow-y: scroll !important;
+        height: 110px !important;
+        background-color: #3788d8 !important;
+        border: none !important;
+      }
+
+      .select2-result {
+        border: 1px solid white;
+        color: black;
+      }
+
+      /* .selected-headings {
+            margin-left: 26%;
+        } */
+    </style>
+
+    <!--    <link rel="stylesheet"-->
+    <!--          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css"/>-->
+  </head>
+
+  <body>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="preloader-item"></div>
+      </div>
+    </div>
+    <!-- Page-->
+    <div class="page">
+      <!-- Page Header-->
+      {% include 'header.html' %}
+      <section class="section section-variant-1 bg-gray-100">
+        <div class="container-fluid">
+          <div class="row" id="blue-notification-row">
+            <div class="col-md-12">
+              <div class="flag note">
+                <div class="flag__image note__icon">
+                  <i class="fa fa-info-circle"></i>
+                </div>
+                <div class="flag__body note__text" id="blue-notification"></div>
+                <a href="#" class="note__close">
+                  <i class="fa fa-times"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-9">
+              <center>
+                <h5 class="global_heading">Venue analytics</h5>
+              </center>
+
+              <div id="analytics">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="max_700">
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a
+                            class="nav-link active"
+                            id="home-tab"
+                            data-toggle="tab"
+                            href="#home"
+                            role="tab"
+                            aria-controls="home"
+                            aria-selected="true"
+                            >Overview</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            class="nav-link"
+                            id="profile-tab"
+                            data-toggle="tab"
+                            href="#profile"
+                            role="tab"
+                            aria-controls="profile"
+                            aria-selected="false"
+                            >By coach</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            class="nav-link"
+                            id="contact-tab"
+                            data-toggle="tab"
+                            href="#contact"
+                            role="tab"
+                            aria-controls="contact"
+                            aria-selected="false"
+                            >By venue name</a
+                          >
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div
+                          class="tab-pane fade show active"
+                          id="home"
+                          role="tabpanel"
+                          aria-labelledby="home-tab"
+                        >
+                          <table>
+                            <tr>
+                              <td>Total Courses</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Total Attendance %</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Total RJ %</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Total OutStanding Tasks</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Courses Unstaffed</td>
+                              <td>4</td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div
+                          class="tab-pane fade"
+                          id="profile"
+                          role="tabpanel"
+                          aria-labelledby="profile-tab"
+                        >
+                          <select
+                            class="form-select form-select-sm"
+                            onchange="getval(this);"
+                            aria-label=".form-select-sm example"
+                            id="selction-option-coach"
+                            style="width: 100px"
+                          >
+                            <option selected>Open this select menu</option>
+                          </select>
+                          <table>
+                            <tr>
+                              <td>Total Courses</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Total Attendance %</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Total RJ %</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Total OutStanding Tasks</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Courses Unstaffed</td>
+                              <td>4</td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div
+                          class="tab-pane fade"
+                          id="contact"
+                          role="tabpanel"
+                          aria-labelledby="contact-tab"
+                        >
+                          <select
+                            class="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                            id="selction-option-venue"
+                            style="width: 100px"
+                          >
+                            <option selected>Open this select menu</option>
+                          </select>
+                          <table>
+                            <tr>
+                              <td>Total Courses</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Total Attendance %</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Total RJ %</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Total OutStanding Tasks</td>
+                              <td>50</td>
+                            </tr>
+                            <tr>
+                              <td>Courses Unstaffed</td>
+                              <td>4</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" id="recent_activities">
+                <div class="col-md-12">
+                  <div class="table-custom-responsive">
+                    <table class="table-custom table-standings table-classic">
+                      <thead>
+                        <tr>
+                          <th
+                            colspan="3"
+                            style="text-align: center; font-size: 18px"
+                          >
+                            Recent Activities
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="activities"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 margin_left_0 reviews_setting">
+              <h4 class="t_heading">Rating Alerts</h4>
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <ul class="profile">
+                        <li>
+                          <h5>Excellent</h5>
+                        </li>
+                        <li>
+                          <ul class="d-flex justify-content-center star">
+                            <li><i class="text-warning fa fa-star"></i></li>
+                            <li><i class="text-warning fa fa-star"></i></li>
+                            <li><i class="text-warning fa fa-star"></i></li>
+                            <li><i class="text-warning fa fa-star"></i></li>
+                            <li><i class="text-warning fa fa-star"></i></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>4,87</strong> <span>Average</span>
+                          <strong>1325</strong>
+                          <span>Reviews</span>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="text-warning fa fa-star"></i> Reviews</a
+                          >
+                        </li>
+                      </ul>
+                      <div class="user_profile d-flex justify-content-between">
+                        <div>
+                          <a
+                            class="float-left"
+                            href="https://maniruzzaman-akash.blogspot.com/p/contact.html"
+                            ><strong>Akash</strong>
+                          </a>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                        </div>
+                        <div class="date_rev">
+                          <span>27th of jan 2021 9:51AM</span>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      <p>
+                        Lorem Ipsum is simply dummy text of the pr make but also
+                        the leap into electronic typesetting, remaining
+                        essentially unchanged. It was popularised in the 1960s
+                        with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop
+                        publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+                      </p>
+                      <!-- <p>
+                                            <a class="float-right btn btn-outline-primary ml-2"> <i
+                                                    class="fa fa-reply"></i> Reply</a>
+                                            <a class="float-right btn text-white btn-danger"> <i
+                                                    class="fa fa-heart"></i> Like</a>
+                                        </p> -->
+                      <div class="user_profile d-flex justify-content-between">
+                        <div>
+                          <a
+                            class="float-left"
+                            href="https://maniruzzaman-akash.blogspot.com/p/contact.html"
+                            ><strong>Akash</strong>
+                          </a>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                        </div>
+                        <div class="date_rev">
+                          <span>27th of jan 2021 9:51AM</span>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      <p>
+                        Lorem Ipsum is simply dummy text of the pr make but also
+                        the leap into electronic typesetting, remaining
+                        essentially unchanged. It was popularised in the 1960s
+                        with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop
+                        publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+                      </p>
+                      <div class="user_profile d-flex justify-content-between">
+                        <div>
+                          <a
+                            class="float-left"
+                            href="https://maniruzzaman-akash.blogspot.com/p/contact.html"
+                            ><strong>Akash</strong>
+                          </a>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                        </div>
+                        <div class="date_rev">
+                          <span>27th of jan 2021 9:51AM</span>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      <p>
+                        Lorem Ipsum is simply dummy text of the pr make but also
+                        the leap into electronic typesetting, remaining
+                        essentially unchanged. It was popularised in the 1960s
+                        with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop
+                        publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+                      </p>
+                      <div class="user_profile d-flex justify-content-between">
+                        <div>
+                          <a
+                            class="float-left"
+                            href="https://maniruzzaman-akash.blogspot.com/p/contact.html"
+                            ><strong>Akash</strong>
+                          </a>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                          <span class="float-left"
+                            ><i class="text-warning fa fa-star"></i
+                          ></span>
+                        </div>
+                        <div class="date_rev">
+                          <span>27th of jan 2021 9:51AM</span>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      <p>
+                        Lorem Ipsum is simply dummy text of the pr make but also
+                        the leap into electronic typesetting, remaining
+                        essentially unchanged. It was popularised in the 1960s
+                        with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop
+                        publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </section>
+
+      <div id="absentModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!--                    <div class="icon-box">-->
+              <!--                        <i class="material-icons">&#xE876;</i>-->
+              <!--                    </div>-->
+              <h4 class="modal-title w-100">Please Confirm!</h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-center">
+                Are you sure you want to mark <span id="std-name"></span> absent
+                on the selected date ?
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-success btn-block"
+                data-dismiss="modal"
+                onclick="absent()"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="rebookModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!--                    <div class="icon-box">-->
+              <!--                        <i class="material-icons">&#xE876;</i>-->
+              <!--                    </div>-->
+              <h4 class="modal-title w-100">Please Confirm!</h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-center">
+                Are you sure you want to rebook <span id="std-name1"></span> on
+                the selected date ?
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-success btn-block"
+                data-dismiss="modal"
+                onclick="rebook()"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Page Footer-->
+      {% include 'footer.html' %}
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script src="/static/js/fullcalendar/main.js"></script>
+
+    <!-- Javascript-->
+    <script src="/static/js/core.min.js"></script>
+    <script src="/static/js/authentication/auth.js"></script>
+    <script src="/static/js/permissions/permission.js"></script>
+    <script src="/static/js/course/cart_count.js"></script>
+    <script src="/static/js/script.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+    <script
+      src="https://apis.google.com/js/platform.js?onload=onLoad"
+      async
+      defer
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <!-- <script src="/static/js/dashboard/dashboard.js"></script> -->
+    <script src="/static/js/venueanalytics/venue_analytics_new.js"></script>
+    <script src="/static/js/exportCSV/export_booked_csv_data.js"></script>
+  </body>
+</html>

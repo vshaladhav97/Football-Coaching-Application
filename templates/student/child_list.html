@@ -1,0 +1,623 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+<head>
+    <!-- Site Title-->
+    <title>Courses</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-signin-client_id"
+        content="912979131888-dbcvct33u7aja0i4odm79qf7o5u7i2ru.apps.googleusercontent.com" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+        href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900" />
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/fonts.css" />
+    <link rel="stylesheet" href="/static/css/alert.css" />
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link" />
+    <link rel="stylesheet" href="/static/css/globalStyling.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="/static/css/listing/listing.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        .col-sm-12 {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        hr {
+            width: 0px;
+        }
+
+        .alert.alert-info {
+            background-color: white;
+            color: #577696;
+            box-shadow: 0 0 5px #9b9b9b;
+        }
+
+        .alert.alert-danger {
+            background-color: #f55145;
+            color: #fff;
+        }
+
+        .edit-menu {
+            background-color: white;
+        }
+
+        .course-type-container {
+            height: 100vh;
+            display: flex;
+        }
+
+        .group-contents {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .group-style-1 {
+            background-color: black;
+            height: 90px;
+            color: white;
+            padding: 10px 10px 10px 10px;
+            font-size: 12px;
+            position: relative;
+            left: 30px;
+            bottom: 30px;
+            top: 0px;
+        }
+
+        .loop-age {
+            left: 35px;
+            bottom: 25px;
+            position: relative;
+        }
+
+        .group-style {
+            color: white;
+            background-color: rgb(74, 115, 226);
+            height: 40px;
+            padding: 10px 10px 10px 10px;
+            font-size: 10px;
+        }
+
+        .time-contents {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .time-content-1 {
+            background-color: lightgray;
+            height: 90px;
+            color: black;
+            padding: 10px 25px 10px 25px;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .time-content {
+            color: black;
+            background-color: grey;
+            height: 40px;
+
+            padding: 10px 25px 10px 25px;
+        }
+
+        .total-count {
+            color: white;
+            background-color: black;
+            height: 50px;
+            padding: 3px 115px 19px 115px;
+        }
+
+        hr {
+            color: white !important;
+            background-color: white;
+        }
+
+        #cars {
+            padding-left: 5px;
+        }
+
+        .image-content {
+            color: white;
+            background-color: #312f2f;
+            text-align: center;
+            width: 21%;
+            padding: 3px 31px 4px 28px;
+        }
+
+        .select2-chosen {
+            position: relative !important;
+            right: 14px !important;
+            color: black !important;
+        }
+
+        .select2-arrow b::before {
+            border: 2px solid black !important;
+            /* left: 4px; */
+            position: relative !important;
+            left: 16px !important;
+            color: black !important;
+        }
+
+        .select2-choice {
+            border: 2px solid black;
+        }
+
+        .select2-arrow {
+            right: 14px !important;
+        }
+
+        .select2-container .select2-choice {
+            padding: 0px 24px !important;
+            background-color: gray;
+            left: 30px;
+            bottom: 3px;
+        }
+
+        .group-style-1 {
+            position: relative;
+            left: 0px;
+            right: 44vh;
+            bottom: 2px;
+        }
+
+        #next-btn {
+            background-color: #39399e;
+            border: none;
+            border-radius: 0px;
+            text-decoration: underline;
+            font-size: 22px;
+            padding: 5px 0px 5px 0px;
+        }
+
+        #go-back-bt {
+            background-color: #54565a;
+            border: none;
+            border-radius: 0px;
+            text-decoration: underline;
+            font-size: 22px;
+            padding: 5px 0px 5px 0px;
+        }
+
+        #third-div-third-child {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 17px;
+        }
+
+        #first-div-second-child {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .dropdwn {
+            background-color: grey;
+            width: 38px;
+            border: 2px solid black;
+        }
+
+        #next-btn {
+            background-color: #39399e;
+            border: none;
+            border-radius: 0px;
+            text-decoration: underline;
+            font-size: 22px;
+            padding: 5px 0px 5px 0px;
+        }
+
+        #go-back-bt {
+            background-color: #54565a;
+            border: none;
+            border-radius: 0px;
+            text-decoration: underline;
+            font-size: 22px;
+            padding: 5px 0px 5px 0px;
+        }
+
+        .child-header {
+            font-size: 11px;
+            background-color: #2323a7;
+            color: white;
+            padding: 5px;
+        }
+
+        .child-body {
+            padding: 5px 5px 20px 5px;
+            background-color: lightgray;
+            color: black;
+        }
+
+        #child_infos {
+            margin-left: 2%;
+            margin-top: 12%;
+        }
+
+        .marginRow {
+            margin-bottom: 0px !important;
+        }
+
+        .child_column {
+            float: left;
+            /* width: 15%; */
+            /* padding: 10px; */
+            color: black;
+
+        }
+
+        .child_columns {
+            float: left;
+
+
+        }
+
+        /* Clear floats after the columns */
+        .child_row:after {
+            content: "";
+            display: table;
+            clear: both;
+
+        }
+
+        .child-data {
+            color: black
+        }
+
+        .child-header-list {
+            color: black;
+            font-weight: bold;
+        }
+
+        .profile-header {
+            font-size: 20px;
+            color: black;
+            font-weight: bold;
+
+        }
+
+        .profile-header-official {
+            font-size: 20px;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader-body">
+            <div class="preloader-item"></div>
+        </div>
+    </div>
+    <!-- Page-->
+    <div class="page">
+        <!-- Page Header-->
+        {% include 'header.html' %}
+        <!-- Section Breadcrumbs-->
+        <section class="section section-variant-1 bg-gray-100" id="login-div">
+            <div class="container-fluid">
+                <div class="row" id="blue-notification-row">
+                    <div class="col-md-12">
+                        <div class="flag note">
+                            <div class="flag__image note__icon">
+                                <i class="fa fa-info-circle"></i>
+                            </div>
+                            <div class="flag__body note__text" id="blue-notification"></div>
+                            <a href="#" class="note__close">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <center>
+
+                            <div class="profile-header-official">Profile Child </div>
+                            <div class="profile-header">
+
+                            </div>
+                        </center>
+                        <form class="rd-form rd-mailform" id="child_form" data-form-output="form-output-global"
+                            style="color: black; top: 35px">
+                            <div class="row profile_data">
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label for="first_name" class="col-sm-4 col-form-label"><strong>First
+                                                name:</strong></label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control-plaintext" id="first_name"
+                                                name="first_name" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label for="last_name" class="col-sm-4 col-form-label"><strong>Last
+                                                name:</strong></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control-plaintext" id="last_name"
+                                                name="last_name" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row profile_data">
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label for="dob" class="col-sm-4 col-form-label"><strong>D.O.B:</strong></label>
+                                        <div class="col-sm-8">
+                                            <input type="date" class="form-control-plaintext" id="dob" name="dob"
+                                                readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label for="medical_issue" class="col-sm-4 col-form-label"><strong>Medical
+                                                Condition/Allergis:</strong></label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control-plaintext" id="medical_issue"
+                                                name="medical_issue" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row profile_data">
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <!-- <label for="medical_issue" class="col-sm-4 col-form-label"><em for="dob"
+                                                    class="col-sm-4 col-form-label fas fa-edit"
+                                                    style="font-size: 24px"></em><strong>Edit</strong></label> -->
+                                        <div class="container">
+                                            <div class="row">
+                                                <div style="display:flex;">
+                                                    <div class="col-xs-6">
+                                                        <em class="col-sm fas fa-edit" style="font-size: 24px"></em>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <button type="submit" style="    border: none;
+                                                                    background: white;
+                                                                    color: blue;
+                                                                    font-size: 18px;
+                                                                    margin-top: 2px;" id="edit"
+                                                            onclick="allowEdit(); return false;">
+                                                            Edit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <button type="submit" onclick="editchild()" class="button">
+                                            Save
+                                        </button>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control-plaintext" id="medical_issue"
+                                                name="medical_issue" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                        <div class="container" id="child_list_styling">
+                            <div class="child-header-list">Other Children In Your Account</div>
+                            <div id="child_list" style="max-height: 400px; overflow-y: scroll;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 margin_left_0 reviews_setting">
+                        <h4 class="t_heading">Rating Alerts</h4>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="profile">
+                                            <li>
+                                                <h5>Excellent</h5>
+                                            </li>
+                                            <li>
+                                                <ul class="d-flex justify-content-center star">
+                                                    <li><i class="text-warning fa fa-star"></i></li>
+                                                    <li><i class="text-warning fa fa-star"></i></li>
+                                                    <li><i class="text-warning fa fa-star"></i></li>
+                                                    <li><i class="text-warning fa fa-star"></i></li>
+                                                    <li><i class="text-warning fa fa-star"></i></li>
+                                                </ul>
+                                            </li>
+                                            <li><strong>4,87</strong> <span>Average</span> <strong>1325</strong>
+                                                <span>Reviews</span>
+                                            </li>
+                                            <li><a href="#"><i class="text-warning fa fa-star"></i> Reviews</a></li>
+                                        </ul>
+                                        <div class="user_profile d-flex justify-content-between">
+                                            <div>
+                                                <a class="float-left"
+                                                    href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                                </a>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            </div>
+                                            <div class="date_rev">
+                                                <span>27th of jan 2021 9:51AM</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                            electronic typesetting, remaining essentially unchanged. It was
+                                            popularised in the 1960s with the release of Letraset sheets containing
+                                            Lorem Ipsum passages, and more recently with desktop publishing software
+                                            like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <!-- <p>
+                                            <a class="float-right btn btn-outline-primary ml-2"> <i
+                                                    class="fa fa-reply"></i> Reply</a>
+                                            <a class="float-right btn text-white btn-danger"> <i
+                                                    class="fa fa-heart"></i> Like</a>
+                                        </p> -->
+                                        <div class="user_profile d-flex justify-content-between">
+                                            <div>
+                                                <a class="float-left"
+                                                    href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                                </a>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            </div>
+                                            <div class="date_rev">
+                                                <span>27th of jan 2021 9:51AM</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into
+                                            electronic typesetting, remaining essentially unchanged. It was
+                                            popularised in the 1960s with the release of Letraset sheets containing
+                                            Lorem Ipsum passages, and more recently with desktop publishing software
+                                            like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <div class="user_profile d-flex justify-content-between">
+                                            <div>
+                                                <a class="float-left"
+                                                    href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Akash</strong>
+                                                </a>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                                <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                            </div>
+                                            <div class="date_rev">
+                                                <span>27th of jan 2021 9:51AM</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                       
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Registered Successfully</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                        <!--        <button type="button" class="btn btn-primary">Send message</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="icon-box">
+                            <i class="material-icons">&#xE876;</i>
+                        </div>
+                        <h4 class="modal-title w-100">Awesome!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Your registration confirmed.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success btn-block" data-dismiss="modal">
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="deleteEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Delete Course</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" name="course_id" id="course_id" />
+                            <p>Are you sure you want to delete these Records?</p>
+                            <p class="text-warning">
+                                <small>This action cannot be undone.</small>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
+                            <input type="button" class="btn btn-danger" value="Delete" onclick="deleteCourseRecord()" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Page Footer-->
+        {% include 'footer.html' %}
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="/static/js/core.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script src="/static/js/customer/child_list.js"></script>
+    <script src="/static/js/customer/customer.js"></script>
+    <script src="/static/js/authentication/auth.js"></script>
+    <script src="/static/js/permissions/permission.js"></script>
+    <script src="/static/js/student/student_add.js"></script>
+</body>
+
+</html>

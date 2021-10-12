@@ -1,0 +1,178 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Courses</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="google-signin-client_id"
+      content="912979131888-dbcvct33u7aja0i4odm79qf7o5u7i2ru.apps.googleusercontent.com"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+    <!-- Stylesheets-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600,900%7CRoboto:400,900"
+    />
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/fonts.css" />
+    <link rel="stylesheet" href="/static/css/style.css" id="main-styles-link" />
+    <link rel="stylesheet" href="/static/css/globalStyling.css" />
+    <link rel="stylesheet" href="/static/css/toastr.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/static/js/toastr.js"></script>
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="preloader-item"></div>
+      </div>
+    </div>
+    <!-- Page-->
+    <div class="page">
+      <!-- Page Header-->
+      {% include 'header.html' %}
+      <!-- Section Breadcrumbs-->
+      <section class="section section-sm bg-gray-100">
+        <input type="hidden" id="course-id" value="{{ data }}" />
+
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-12">
+              <!-- Heading Component-->
+              <article class="heading-component">
+                <div class="heading-component-inner">
+                  <!-- <h5 class="heading-component-title">Courses</h5> -->
+                </div>
+              </article>
+              <!-- Post Corporate-->
+              <article class="post-corporate">
+                <div class="post-corporate-content">
+                  <div class="post-corporate-header">
+                    <h4 class="post-corporate-title" id="course-name"></h4>
+                  </div>
+                  <div class="post-corporate-text">
+                    <p id="course-detail"></p>
+                    <select
+                      class="select select-minimal"
+                      id="company"
+                      data-placeholder="Select an option"
+                      data-dropdown-class="select-minimal-dropdown"
+                      style="min-width: 124px"
+                    >
+                      <option value="0" selected="">Enter Your Postcode</option>
+                    </select>
+                    <select
+                      class="select select-minimal"
+                      id="venue"
+                      data-placeholder="Select an option"
+                      data-dropdown-class="select-minimal-dropdown"
+                      style="min-width: 150px"
+                    >
+                      <option value="0" selected="">Select a Venue</option>
+                    </select>
+           
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="search"
+                      style="padding-top: 0px; padding-bottom: 0px"
+                    >
+                      Search
+                    </button>
+                    <span id="error"></span>
+                  </div>
+                  <br />
+                  <div
+                    class="card card-custom"
+                    id="classes"
+                    style="padding-left: 0px"
+                  ></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Registered Successfully</h4>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <!--        <button type="button" class="btn btn-primary">Send message</button>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="icon-box">
+                <i class="material-icons">&#xE876;</i>
+              </div>
+              <h4 class="modal-title w-100">Awesome!</h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-center">Your registration confirmed.</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success btn-block" data-dismiss="modal">
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Page Footer-->
+      {% include 'footer.html' %}
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="/static/js/core.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/customer/customer.js"></script>
+    <script src="/static/js/authentication/auth.js"></script>
+    <script src="/static/js/permissions/permission.js"></script>
+    <script src="/static/js/course/cart_count.js"></script>
+    <script src="/static/js/course/available_venues_for_course.js"></script>
+    <script src="/static/js/exportCSV/export_booked_csv_data.js"></script>
+  </body>
+</html>
